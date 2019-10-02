@@ -1,0 +1,1 @@
+mklink %APPDATA%\.spacemacs %~dp0\spacemacs\.spacemacs
