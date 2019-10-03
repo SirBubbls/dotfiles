@@ -1,0 +1,7 @@
+#key : def
+#name : New function with docstring
+#contributor: Lucas Sas <lucassas@live.de>
+# --
+def ${1:NAME}(${2:self}):
+    ${3:pass}
+$0
