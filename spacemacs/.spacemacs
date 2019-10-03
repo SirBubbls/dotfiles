@@ -329,6 +329,14 @@ you should place your code here."
 
   "Colemak Keybindings"
 
+  "Window Naviagation"
+  (spacemacs/set-leader-keys "wn" 'evil-window-down)
+  (spacemacs/set-leader-keys "wN" 'evil-window-move-very-bottom)
+  (spacemacs/set-leader-keys "we" 'evil-window-up)
+  (spacemacs/set-leader-keys "wE" 'evil-window-move-very-top)
+  (spacemacs/set-leader-keys "wi" 'evil-window-right)
+  (spacemacs/set-leader-keys "wI" 'evil-window-move-far-right)
+
   (define-key evil-normal-state-map "u" 'evil-insert)
 
   (define-key evil-normal-state-map "n" 'evil-next-line)
