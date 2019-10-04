@@ -53,7 +53,11 @@ values."
      (shell :variables
             shell-default-height 20
             shell-default-position 'bottom)
-     ;; spell-checking
+
+     (spell-checking :variables
+                     spell-checking-enable-auto-dictionary t
+                     enable-flyspell-auto-completion t)
+
      syntax-checking
      ;; version-control
      )
@@ -323,6 +327,8 @@ you should place your code here."
 
   "Python"
   (setenv "WORKON_HOME" "C:/Users/Lucas/Anaconda3/")
+  "Using Aspell to Spellcheck"
+  (setq ispell-program-name "aspell")
 
   (define-key evil-normal-state-map (kbd "C-=") 'text-scale-increase)
   (define-key evil-normal-state-map (kbd "C--") 'text-scale-decrease)
@@ -361,6 +367,8 @@ you should place your code here."
   "Scroll to center"
   (define-key evil-normal-state-map "tt" 'evil-scroll-line-to-center)
   (define-key evil-visual-state-map "tt" 'evil-scroll-line-to-center)
+
+  (define-key evil-mode (kbd "C-;") 'flyspell-auto-correct-previous-word)
 
   )
 
