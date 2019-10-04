@@ -364,6 +364,14 @@ you should place your code here."
 
   (define-key evil-normal-state-map "N" 'evil-join)
 
+  "Umlaute"
+  (define-key key-translation-map (kbd "C-u") "ü")
+  (define-key key-translation-map (kbd "C-U") "Ü")
+  (define-key key-translation-map (kbd "C-o") "ö")
+  (define-key key-translation-map (kbd "C-O") "Ö")
+  (define-key key-translation-map (kbd "C-a") "ä")
+  (define-key key-translation-map (kbd "C-A") "Ä")
+
   "Scroll to center"
   (define-key evil-normal-state-map "tt" 'evil-scroll-line-to-center)
   (define-key evil-visual-state-map "tt" 'evil-scroll-line-to-center)
