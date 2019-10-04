@@ -323,6 +323,7 @@ you should place your code here."
 
   "Windows Specific Configuration"
   (setq projectile-git-submodule-command nil) "Fix for projectile under windows"
+  (setq auto-save-default nil)
 
 
   "Python"
