@@ -362,11 +362,11 @@ you should place your code here."
 
   "Umlaute"
   (define-key key-translation-map (kbd "C-u") "ü")
-  (define-key key-translation-map (kbd "C-U") "Ü")
+  (define-key key-translation-map (kbd "C-S-U") "Ü")
   (define-key key-translation-map (kbd "C-o") "ö")
-  (define-key key-translation-map (kbd "C-O") "Ö")
+  (define-key key-translation-map (kbd "C-S-O") "Ö")
   (define-key key-translation-map (kbd "C-a") "ä")
-  (define-key key-translation-map (kbd "C-A") "Ä")
+  (define-key key-translation-map (kbd "C-S-A") "Ä")
 
   "Scroll to center"
   (define-key evil-normal-state-map "tt" 'evil-scroll-line-to-center)
