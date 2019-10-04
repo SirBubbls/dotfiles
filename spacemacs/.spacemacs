@@ -379,6 +379,19 @@ you should place your code here."
 
   (define-key evil-mode (kbd "C-;") 'flyspell-auto-correct-previous-word)
 
+  "Windows Specific Settings"
+  (if (eq system-type 'ms-dos)
+      (setq projectile-git-submodule-command nil) "Fix for projectile under windows"
+
+      "Windows Paths"
+      (setq ispell-personal-dictionary "")
+      (setenv "WORKON_HOME" "C:/Users/Lucas/Anaconda3/") "Python Path"
+      )
+
+  "MAC OS"
+  (if (eq system-type 'darwin)
+    (setq ispell-personal-dictionary "~/.emacs.d/personal_dict")
+    )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
