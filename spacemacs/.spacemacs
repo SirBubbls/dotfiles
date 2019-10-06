@@ -389,6 +389,7 @@ you should place your code here."
   "Windows Specific Settings"
   (if (eq system-type 'ms-dos)
       (setq projectile-git-submodule-command nil) "Fix for projectile under windows"
+      (setq ispell-personal-dictionary "%APPDATA%/.emacs.d/personal_dict")
 
       "Windows Paths"
       (setq ispell-personal-dictionary "")
