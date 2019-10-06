@@ -139,8 +139,6 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(monokai
-                         spacemacs-light)
    dotspacemacs-themes '(spolsky
                          apropospriate)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
@@ -315,6 +313,10 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  (setq flycheck-python-flake8-executable "python3")
+  (setq flycheck-python-pycompile-executable "python3")
+  (setq flycheck-python-pylint-executable "python3")
   )
 
 (defun dotspacemacs/user-config ()
