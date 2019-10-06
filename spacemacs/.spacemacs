@@ -47,6 +47,7 @@ values."
      ;; better-defaults
      emacs-lisp
      git
+     docker
      markdown
      org
      themes-megapack
@@ -104,6 +105,7 @@ values."
    dotspacemacs-check-for-update nil
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
+   dotspacemacs-mode-line-theme 'vim-powerline
    ;; to `emacs-version'.
    dotspacemacs-elpa-subdirectory nil
    ;; One of `vim', `emacs' or `hybrid'.
@@ -139,6 +141,8 @@ values."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(monokai
                          spacemacs-light)
+   dotspacemacs-themes '(spolsky
+                         apropospriate)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
