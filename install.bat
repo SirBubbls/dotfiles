@@ -1,4 +1,4 @@
 mklink %APPDATA%\.spacemacs %~dp0\spacemacs\.spacemacs
+mklink %APPDATA%\.emacs.d\personal_dict %~dp0\spacemacs\personal_dict
 
-mklink /d %APPDATA%\.emacs.d\private\snippets\python-mode %~dp0\spacemacs\.emacs.d\private\snippets\python-mode
-mklink /d %APPDATA%\.emacs.d\private\snippets\org-mode %~dp0\spacemacs\.emacs.d\private\snippets\org-mode
+mklink /d %APPDATA%\.emacs.d\private\snippets %~dp0\spacemacs\.emacs.d\private\snippets
