@@ -354,11 +354,17 @@ you should place your code here."
 
   (define-key evil-normal-state-map "F" 'evil-forward-WORD-end)
   (define-key evil-normal-state-map "f" 'evil-forward-word-end)
+  (define-key evil-visual-state-map "F" 'evil-forward-WORD-end)
+  (define-key evil-visual-state-map "f" 'evil-forward-word-end)
 
   (define-key evil-normal-state-map "I" 'evil-window-bottom)
   (define-key evil-visual-state-map "I" 'evil-window-bottom)
 
   (define-key evil-normal-state-map "N" 'evil-join)
+
+  "Comment/Uncomment"
+  (define-key evil-visual-state-map (kbd "s-/") 'comment-or-uncomment-region)
+  (define-key evil-normal-state-map (kbd "s-/") 'evilnc-comment-or-uncomment-lines)
 
   "Umlaute"
   (define-key key-translation-map (kbd "C-u") "ü")
