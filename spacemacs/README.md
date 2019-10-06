@@ -1,4 +1,15 @@
 # Python
+## Requirements
+`pip3 install flake8 pylint mypy**
+
+**Setup Python Executable**
+
+```lisp
+  (setq flycheck-python-flake8-executable "python3")
+  (setq flycheck-python-pycompile-executable "python3")
+  (setq flycheck-python-pylint-executable "python3")
+```
+
 ## Downloads
 ### Anaconda3
 **Graphical Installers**
