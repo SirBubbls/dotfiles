@@ -1,5 +1,5 @@
-#key : description
-#name : Document Description
-#contributor: Lucas Sas <lucassas@live.de>
+# -*- mode: snippet -*-
+# name: Document Description
+# key: description
 # --
 #+DESCRIPTION: $0
