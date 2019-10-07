@@ -400,7 +400,7 @@ you should place your code here."
 
       "Windows Paths"
       (setq ispell-personal-dictionary "")
-      (setenv "WORKON_HOME" "C:/Users/Lucas/Anaconda3/") "Python Path"
+      (setenv "WORKON_HOME" "C:/Users/Lucas/Anaconda3/")
       (setq url-proxy-services
             '(("http"     . "")
               ("https"    . "")))
