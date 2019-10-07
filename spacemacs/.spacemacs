@@ -372,6 +372,9 @@ you should place your code here."
   (define-key evil-visual-state-map (kbd "s-/") 'comment-or-uncomment-region)
   (define-key evil-normal-state-map (kbd "s-/") 'evilnc-comment-or-uncomment-lines)
 
+  (define-key evil-visual-state-map "rr" 'replace-regexp)
+  (define-key evil-normal-state-map "rr" 'replace-regexp)
+
   "Umlaute"
   (define-key key-translation-map (kbd "C-u") "ü")
   (define-key key-translation-map (kbd "C-S-U") "Ü")
