@@ -389,6 +389,10 @@ you should place your code here."
 
   (define-key evil-mode (kbd "C-;") 'flyspell-auto-correct-previous-word)
 
+  "Proxy Settings"
+  (setenv "no_proxy" "127.0.0.1,localhost")
+  (setenv "NO_PROXY" "127.0.0.1,localhost")
+
   "Windows Specific Settings"
   (if (eq system-type 'ms-dos)
       (setq projectile-git-submodule-command nil) "Fix for projectile under windows"
@@ -397,6 +401,9 @@ you should place your code here."
       "Windows Paths"
       (setq ispell-personal-dictionary "")
       (setenv "WORKON_HOME" "C:/Users/Lucas/Anaconda3/") "Python Path"
+      (setq url-proxy-services
+            '(("http"     . "")
+              ("https"    . "")))
       )
 
   "MAC OS"
