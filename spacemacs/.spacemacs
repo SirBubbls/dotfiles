@@ -472,6 +472,11 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  "Evil Search"
+  (advice-add 'evil-ex-search-next :after
+              (lambda (&rest x) (evil-scroll-line-to-center (line-number-at-pos))))
+  (advice-add 'evil-ex-search-previous :after
+              (lambda (&rest x) (evil-scroll-line-to-center (line-number-at-pos))))
 
   "qq now closes frame not emacs (for daemon mode)"
   (spacemacs/set-leader-keys "qq" 'spacemacs/frame-killer)
