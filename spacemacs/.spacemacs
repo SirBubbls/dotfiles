@@ -203,7 +203,7 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
+   dotspacemacs-mode-line-theme 'doom
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -455,6 +455,16 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+
+  "Mode Line"
+  (setq doom-modeline-env-python-executable "python3")
+  (setq doom-modeline-icon (display-graphic-p))
+  (setq doom-modeline-major-mode-color-icon t)
+  (setq doom-modeline--battery-status t)
+  (setq doom-modeline-height 10)
+
+  (add-hook 'after-init-hook 'fancy-battery-mode)
+  (add-hook 'after-init-hook 'blink-cursor-mode)
   )
 
 (defun dotspacemacs/user-load ()
