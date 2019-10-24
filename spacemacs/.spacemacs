@@ -33,8 +33,6 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     python
-     html
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -42,27 +40,21 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      ivy
      (auto-completion :variables
-                      auto-completion-enable-sort-by-usage t
-                      auto-completion-enable-help-tooltip t
-                      auto-completion-enable-sort-by-usage t
-                      auto-completion-enable-snippets-in-popup t)
-     ;; better-defaults
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-sort-by-usage t)
      emacs-lisp
      git
      docker
+     python
+     html
      markdown
+     imenu-list
      org
+     multiple-cursors
+     treemacs
      themes-megapack
-     (shell :variables
-            shell-default-height 20
-            shell-default-position 'bottom)
-
-     (spell-checking :variables
-                     spell-checking-enable-auto-dictionary t
-                     enable-flyspell-auto-completion t)
-
      syntax-checking
-     ;; version-control
+     version-control
      )
 
    ;; List of additional packages that will be installed without being
