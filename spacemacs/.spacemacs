@@ -473,6 +473,8 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
   (setq auto-save-default nil)
+
+  "Flycheck"
   (setq flycheck-python-flake8-executable "python3")
   (setq flycheck-python-pycompile-executable "python3")
   (setq flycheck-python-pylint-executable "python3")
@@ -480,10 +482,9 @@ you should place your code here."
   "Using Aspell to Spellcheck"
   (setq ispell-program-name "aspell")
 
-  (define-key evil-normal-state-map (kbd "C-=") 'text-scale-increase)
-  (define-key evil-normal-state-map (kbd "C--") 'text-scale-decrease)
-
-  "Colemak Keybindings"
+  "Zoom In/Out"
+  (define-key evil-normal-state-map (kbd "C-=") 'zoom-frm-in)
+  (define-key evil-normal-state-map (kbd "C--") 'zoom-frm-out)
 
   "Window Naviagation"
   (spacemacs/set-leader-keys "wn" 'evil-window-down)
@@ -493,6 +494,10 @@ you should place your code here."
   (spacemacs/set-leader-keys "wi" 'evil-window-right)
   (spacemacs/set-leader-keys "wI" 'evil-window-move-far-right)
 
+  "I Menu"
+  (define-key evil-normal-state-map (kbd "C-i") 'imenu)
+
+  "Colemak Keybindings"
   (define-key evil-normal-state-map "u" 'evil-insert)
 
   (define-key evil-normal-state-map "n" 'evil-next-line)
@@ -503,8 +508,8 @@ you should place your code here."
   (define-key evil-visual-state-map "e" 'evil-previous-line)
   (define-key evil-visual-state-map "i" 'forward-char)
 
-  (define-key evil-normal-state-map "k" 'evil-search-previous)
-  (define-key evil-normal-state-map "K" 'evil-search-next)
+  (define-key evil-normal-state-map "k" 'evil-ex-search-previous)
+  (define-key evil-normal-state-map "K" 'evil-ex-search-next)
 
   (define-key evil-normal-state-map "F" 'evil-forward-WORD-end)
   (define-key evil-normal-state-map "f" 'evil-forward-word-end)
@@ -516,12 +521,11 @@ you should place your code here."
 
   (define-key evil-normal-state-map "N" 'evil-join)
 
-  "Comment/Uncomment"
-  (define-key evil-visual-state-map (kbd "M-/") 'comment-or-uncomment-region)
+  ;; "Comment/Uncomment"
+  (define-key evil-visual-state-map "\M-/" 'evilnc-comment-or-uncomment-lines)
   (define-key evil-normal-state-map (kbd "M-/") 'evilnc-comment-or-uncomment-lines)
 
   (define-key evil-visual-state-map "rr" 'replace-regexp)
-  ;;(define-key evil-normal-state-map "rr" 'replace-regexp)
 
   "Umlaute"
   (define-key key-translation-map (kbd "C-u") "ü")
@@ -530,10 +534,6 @@ you should place your code here."
   (define-key key-translation-map (kbd "C-S-O") "Ö")
   (define-key key-translation-map (kbd "C-a") "ä")
   (define-key key-translation-map (kbd "C-S-A") "Ä")
-
-  "Scroll to center"
-  ;;(define-key evil-normal-state-map "tt" 'evil-scroll-line-to-center)
-  ;;(define-key evil-visual-state-map "tt" 'evil-scroll-line-to-center)
 
   (define-key evil-mode (kbd "C-;") 'flyspell-auto-correct-previous-word)
 
