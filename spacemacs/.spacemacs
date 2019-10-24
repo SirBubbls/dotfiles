@@ -488,6 +488,8 @@ you should place your code here."
   (advice-add 'evil-ex-search-previous :after
               (lambda (&rest x) (evil-scroll-line-to-center (line-number-at-pos))))
 
+  "Fix for symbolic link prompt"
+  (setq vc-follow-symlinks nil)
   "qq now closes frame not emacs (for daemon mode)"
   (spacemacs/set-leader-keys "qq" 'spacemacs/frame-killer)
 
