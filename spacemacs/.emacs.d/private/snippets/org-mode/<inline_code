@@ -1,0 +1,5 @@
+# key: <inline_code
+# name: Inline Code
+# contributor: Lucas Sas <lucassas@live.de>
+# --
+src_sh[:exports code]{$1}$0
