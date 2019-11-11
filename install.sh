@@ -12,3 +12,7 @@ ln -s "$parent_path"/spacemacs/personal_dict ~/.emacs.d/personal_dict
 # Removing and replacing snippets folder
 rm -r ~/.emacs.d/private/snippets
 ln -s "$parent_path"/spacemacs/.emacs.d/private/snippets ~/.emacs.d/private/snippets
+
+# Install Fish Config
+rm -r ~/.config/fish
+ln -s "$parent_path"/fish ~/.config/fish
