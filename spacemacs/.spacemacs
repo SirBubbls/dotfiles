@@ -478,10 +478,10 @@ you should place your code here."
   (global-company-mode t)
   "Move Line & Region"
   (setq vim-style-visual-line-move-text t)
-  (define-key evil-normal-state-map (kbd "M-n") 'move-text-line-down)
-  (define-key evil-normal-state-map (kbd "M-e") 'move-text-line-up)
-  (define-key evil-insert-state-map (kbd "M-n") 'move-text-line-down)
-  (define-key evil-insert-state-map (kbd "M-e") 'move-text-line-up)
+  (define-key evil-normal-state-map (kbd "M-n") (lambda () (interactive) (move-text-line-down) (indent-for-tab-command)))
+  (define-key evil-normal-state-map (kbd "M-n") (lambda () (interactive) (move-text-line-down) (indent-for-tab-command)))
+  (define-key evil-insert-state-map (kbd "M-e") (lambda () (interactive) (move-text-line-up) (indent-for-tab-command)))
+  (define-key evil-insert-state-map (kbd "M-e") (lambda () (interactive) (move-text-line-up) (indent-for-tab-command)))
   (define-key evil-visual-state-map (kbd "M-n") 'drag-stuff-down)
   (define-key evil-visual-state-map (kbd "M-e") 'drag-stuff-up)
 
