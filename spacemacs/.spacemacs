@@ -50,7 +50,6 @@ This function should only modify configuration layer settings."
      markdown
      imenu-list
      org
-     multiple-cursors
      treemacs
      themes-megapack
      syntax-checking
@@ -62,12 +61,13 @@ This function should only modify configuration layer settings."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(yasnippet-snippets
+                                      drag-stuff
                                       all-the-icons)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(evil-mc)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -476,6 +476,14 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
   (global-company-mode t)
+  "Move Line & Region"
+  (setq vim-style-visual-line-move-text t)
+  (define-key evil-normal-state-map (kbd "M-n") 'move-text-line-down)
+  (define-key evil-normal-state-map (kbd "M-e") 'move-text-line-up)
+  (define-key evil-insert-state-map (kbd "M-n") 'move-text-line-down)
+  (define-key evil-insert-state-map (kbd "M-e") 'move-text-line-up)
+  (define-key evil-visual-state-map (kbd "M-n") 'drag-stuff-down)
+  (define-key evil-visual-state-map (kbd "M-e") 'drag-stuff-up)
 
   "Evil Search"
   (advice-add 'evil-ex-search-next :after
