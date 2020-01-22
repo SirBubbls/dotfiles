@@ -518,6 +518,11 @@ you should place your code here."
   ;; (setq ispell-local-dictionary "combined")
   ;; (setq ispell-dictionary "combined")
 
+  "Latex"
+  (setq org-preview-latex-image-directory "/tmp/latex/")
+  (setq org-latex-create-formula-image-program 'dvisvgm)
+  ;; (setq org-format-latex-options
+  ;;       (plist-put org-format-latex-options :scale 0.75))
   (line-number-mode 0)
   (global-undo-tree-mode 0)
   (column-number-mode 0)
