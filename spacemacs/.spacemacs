@@ -32,27 +32,36 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
-     ;; ----------------------------------------------------------------
+   '(;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ivy
+     (helm :variables
+           helm-enable-auto-resize t
+           helm-no-header t)
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t)
      emacs-lisp
      git
      docker
-     python
+     (python :variables
+             python-test-runner 'pytest
+             python-backend 'lsp)
      html
+     (c-c++ :variables
+            c-c++-enable-clang-support t)
+     spell-checking
+     shell
      markdown
      ipython-notebook
      imenu-list
      org
-     treemacs
-     themes-megapack
+     (treemacs :variables
+               treemacs-use-git-mode 'deferred
+               treemacs-use-collapsed-directories 3
+               treemacs-use-filewatch-mode t)
      syntax-checking
      version-control
      )
@@ -79,7 +88,7 @@ This function should only modify configuration layer settings."
    ;; installs only the used packages but won't delete unused ones. `all'
    ;; installs *all* packages supported by Spacemacs and never uninstalls them.
    ;; (default is `used-only')
-   dotspacemacs-install-packages 'used-only))
+   dotspacemacs-install-packages 'used-but-keep-unused))
 
 (defun dotspacemacs/init ()
   "Initialization:
@@ -247,11 +256,11 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil the default layout name is displayed in the mode-line.
    ;; (default nil)
-   dotspacemacs-display-default-layout nil
+   dotspacemacs-display-default-layout t
 
    ;; If non-nil then the last auto saved layouts are resumed automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts t
+   dotspacemacs-auto-resume-layouts nil
 
    ;; If non-nil, auto-generate layout name when creating new layouts. Only has
    ;; effect when using the "jump to layout by number" commands. (default nil)
@@ -274,7 +283,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil, the paste transient-state is enabled. While enabled, after you
    ;; paste something, pressing `C-j' and `C-k' several times cycles through the
    ;; elements in the `kill-ring'. (default nil)
-   dotspacemacs-enable-paste-transient-state nil
+   dotspacemacs-enable-paste-transient-state t
 
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
@@ -304,17 +313,17 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
-   dotspacemacs-fullscreen-use-non-native t
+   dotspacemacs-fullscreen-use-non-native nil
 
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup t
+   dotspacemacs-maximized-at-startup nil
 
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
    ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
    ;; borderless fullscreen. (default nil)
-   dotspacemacs-undecorated-at-startup t
+   dotspacemacs-undecorated-at-startup nil
 
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
@@ -455,8 +464,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
   "Mode Line"
   ;; (setq doom-modeline-env-python-executable "python3")
-  ;; (setq doom-modeline-icon (display-graphic-p))
-  ;; (setq doom-modeline-major-mode-color-icon t)
+  (setq doom-modeline-major-mode-color-icon t)
   (setq doom-modeline--battery-status t)
   (setq inhibit-compacting-font-caches t)
   ;; Performance Improvement for doom
@@ -494,6 +502,7 @@ you should place your code here."
     (setq doom-themes-enable-bold t)
     (setq doom-themes-treemacs-theme "doom-colors")
     )
+  (setenv "LANG" "en_US, de_DE")
   (line-number-mode 0)
   (global-undo-tree-mode 0)
   (column-number-mode 0)
@@ -503,9 +512,29 @@ you should place your code here."
   (menu-bar-mode 0)
   (global-hl-todo-mode 0)
   (eyebrowse-mode 0)
-  (company-statistics-mode 0)
+  ;; (company-statistics-mode 0)
   (mac-mouse-wheel-mode 0)
+  "Distraction Free Mode"
+  (define-key global-map (kbd "<f12>") 'spacemacs/toggle-distraction-free)
+  (setq writeroom-width 0.65)
+
+  "Start Emacs Client in Fullscreen"
+  (add-to-list 'default-frame-alist '(fullscreen . fullboth))
+  "Fix for search functions"
+  (define-obsolete-function-alias 'counsel-more-chars 'ivy-more-chars "0.10.0")
+  "Code Blocks in ORG-Mode"
+  (setq org-src-tab-acts-natively t)
+  (spacemacs/toggle-vi-tilde-fringe-off)
+  ;; (setq-default mode-line-format nil)
+  (set-fringe-mode 0)
+  (set-face-background 'vertical-border "gray")
+  (set-face-foreground 'vertical-border (face-background 'vertical-border))
+  (spacemacs/toggle-mode-line)
+
   (global-company-mode t)
+  (global-aggressive-indent-mode t)
+  (setq dotspacemacs-mode-line-unicode-symbols nil)
+
   "Move Line & Region"
   (setq vim-style-visual-line-move-text t)
   (define-key evil-normal-state-map (kbd "M-n") (lambda () (interactive) (move-text-line-down) (indent-for-tab-command)))
@@ -516,11 +545,14 @@ you should place your code here."
   (define-key evil-visual-state-map (kbd "M-e") 'drag-stuff-up)
 
   "Evil Search"
+  (add-hook 'imenu-after-jump-hook 'reposition-window)
   (advice-add 'evil-ex-search-next :after
               (lambda (&rest x) (evil-scroll-line-to-center (line-number-at-pos))))
   (advice-add 'evil-ex-search-previous :after
               (lambda (&rest x) (evil-scroll-line-to-center (line-number-at-pos))))
 
+  "Copy & Paste "
+  (setq save-interprogram-paste-before-kill t)
   (setq company-idle-delay 0.1)
   (setq company-minimum-prefix-length 2)
   (setq company-selection-wrap-around t)
@@ -539,12 +571,9 @@ you should place your code here."
   (setq auto-save-default nil)
 
   "Flycheck"
-  (setq flycheck-python-flake8-executable "python3")
-  (setq flycheck-python-pycompile-executable "python3")
-  (setq flycheck-python-pylint-executable "python3")
-
-  "Using Aspell to Spellcheck"
-  (setq ispell-program-name "aspell")
+  ;; (setq flycheck-python-flake8-executable "python3")
+  ;; (setq flycheck-python-pycompile-executable "python3")
+  ;; (setq flycheck-python-pylint-executable "python3")
 
   "Zoom In/Out"
   (define-key evil-normal-state-map (kbd "C-=") 'zoom-frm-in)
@@ -624,7 +653,7 @@ you should place your code here."
 
   "MAC OS"
   (if (eq system-type 'darwin)
-    (setq ispell-personal-dictionary "~/.emacs.d/personal_dict")
+      (setq ispell-personal-dictionary "~/.emacs.d/personal_dict")
     )
   )
 
