@@ -534,6 +534,9 @@ you should place your code here."
   (eyebrowse-mode 0)
   ;; (company-statistics-mode 0)
   (mac-mouse-wheel-mode 0)
+  (define-key global-map (kbd "M-i") 'er/expand-region)
+  (define-key global-map (kbd "M-s") 'avy-goto-symbol-1)
+
   "Distraction Free Mode"
   (define-key global-map (kbd "<f12>") 'spacemacs/toggle-distraction-free)
   (setq writeroom-width 0.65)
@@ -563,6 +566,11 @@ you should place your code here."
   (define-key evil-insert-state-map (kbd "M-n") (lambda () (interactive) (move-text-line-down) (indent-for-tab-command)))
   (define-key evil-visual-state-map (kbd "M-n") 'drag-stuff-down)
   (define-key evil-visual-state-map (kbd "M-e") 'drag-stuff-up)
+
+  "Imenu and Tab"
+  (define-key evil-normal-state-map (kbd "<backtab>") 'imenu)
+  ;; (define-key evil-normal-state-map (kbd "<tab>") 'indent-for-tab-command)
+  ;; (define-key evil-insert-state-map (kbd "<tab>") 'indent-for-tab-command)
 
   "Evil Search"
   (add-hook 'imenu-after-jump-hook 'reposition-window)
@@ -616,6 +624,7 @@ you should place your code here."
   (define-key evil-normal-state-map "n" 'evil-next-line)
   (define-key evil-normal-state-map "e" 'evil-previous-line)
   (define-key evil-normal-state-map "i" 'forward-char)
+  (define-key evil-visual-state-map "i" 'forward-char)
 
   (define-key evil-visual-state-map "n" 'evil-next-line)
   (define-key evil-visual-state-map "e" 'evil-previous-line)
@@ -647,6 +656,7 @@ you should place your code here."
   (define-key key-translation-map (kbd "C-S-O") "Ö")
   (define-key key-translation-map (kbd "C-a") "ä")
   (define-key key-translation-map (kbd "C-S-A") "Ä")
+  (define-key key-translation-map (kbd "C-s") "ß")
 
   (define-key evil-mode (kbd "C-;") 'flyspell-auto-correct-previous-word)
 
