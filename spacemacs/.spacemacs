@@ -690,3 +690,81 @@ you should place your code here."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(ansi-color-names-vector
+     ["#313131" "#D9A0A0" "#8CAC8C" "#FDECBC" "#99DDE0" "#E090C7" "#A0EDF0" "#DCDCCC"])
+   '(company-box-icons-alist (quote company-box-icons-all-the-icons))
+   '(company-quickhelp-color-background "#4F4F4F")
+   '(company-quickhelp-color-foreground "#DCDCCC")
+   '(compilation-message-face (quote default))
+   '(cursor-type (quote bar))
+   '(custom-safe-themes
+     (quote
+      ("1d50bd38eed63d8de5fcfce37c4bb2f660a02d3dff9cbfd807a309db671ff1af" "07e3a1323eb29844e0de052b05e21e03ae2f55695c11f5d68d61fb5fed722dd2" "615123f602c56139c8170c153208406bf467804785007cdc11ba73d18c3a248b" "fa3bdd59ea708164e7821574822ab82a3c51e262d419df941f26d64d015c90ee" "4daff0f7fb02c7a4d5766a6a3e0931474e7c4fd7da58687899485837d6943b78" "1ed5c8b7478d505a358f578c00b58b430dde379b856fbcb60ed8d345fc95594e" "0809c08440b51a39c77ec5529f89af83ab256a9d48107b088d40098ce322c7d8" "e074be1c799b509f52870ee596a5977b519f6d269455b84ed998666cf6fc802a" "bc836bf29eab22d7e5b4c142d201bcce351806b7c1f94955ccafab8ce5b20208" "51956e440cec75ba7e4cff6c79f4f8c884a50b220e78e5e05145386f5b381f7b" "a2cde79e4cc8dc9a03e7d9a42fabf8928720d420034b66aecc5b665bbf05d4e9" default)))
+   '(evil-want-Y-yank-to-eol nil)
+   '(fci-rule-color "#5E5E5E")
+   '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
+   '(highlight-tail-colors
+     (quote
+      (("#3C3D37" . 0)
+       ("#679A01" . 20)
+       ("#4BBEAE" . 30)
+       ("#1DB4D0" . 50)
+       ("#9A8F21" . 60)
+       ("#A75B00" . 70)
+       ("#F309DF" . 85)
+       ("#3C3D37" . 100))))
+   '(linum-format " %7i ")
+   '(magit-diff-use-overlays nil)
+   '(nrepl-message-colors
+     (quote
+      ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
+   '(package-selected-packages
+     (quote
+      (helm-lsp counsel swiper ivy flyspell-correct-helm flyspell-correct drag-stuff helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag ace-jump-helm-line company-box tide typescript-mode yaml-mode utop tuareg caml seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rbenv rake ocp-indent ob-elixir mvn minitest meghanada maven-test-mode lsp-java groovy-mode groovy-imports pcache gradle-mode flycheck-ocaml merlin flycheck-mix flycheck-credo emojify emoji-cheat-sheet-plus dune company-lsp company-emoji chruby bundler inf-ruby auto-complete-rst alchemist elixir-mode tern nodejs-repl livid-mode skewer-mode js2-refactor multiple-cursors js2-mode js-doc import-js grizzl helm-gtags helm helm-core ggtags dap-mode bui tree-mode counsel-gtags add-node-modules-path wc-mode lsp-ui lsp-treemacs lsp-python-ms python lsp-mode dash-functional git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter browse-at-remote diff-hl evil-mc zenburn-theme zen-and-art-theme yasnippet-snippets yapfify xterm-color ws-butler writeroom-mode winum white-sand-theme which-key wgrep web-mode web-beautify vterm volatile-highlights vi-tilde-fringe uuidgen use-package underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme treemacs-projectile treemacs-magit treemacs-evil toxi-theme toc-org tao-theme tangotango-theme tango-plus-theme tango-2-theme tagedit symon symbol-overlay sunny-day-theme sublime-themes subatomic256-theme subatomic-theme string-inflection spaceline-all-the-icons spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smex smeargle slim-mode shell-pop seti-theme scss-mode sass-mode reverse-theme restart-emacs request rebecca-theme rainbow-delimiters railscasts-theme pytest pyenv-mode py-isort purple-haze-theme pug-mode professional-theme prettier-js popwin planet-theme pippel pipenv pip-requirements phoenix-dark-pink-theme phoenix-dark-mono-theme persp-mode pcre2el password-generator paradox overseer orgit organic-green-theme org-projectile org-present org-pomodoro org-mime org-download org-cliplink org-bullets org-brain open-junk-file omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme nameless mustang-theme multi-term move-text monokai-theme monochrome-theme molokai-theme moe-theme mmm-mode minimal-theme material-theme markdown-toc majapahit-theme magit-svn magit-gitflow madhat2r-theme macrostep lush-theme lorem-ipsum live-py-mode link-hint light-soap-theme kaolin-themes jbeans-theme jazz-theme ivy-yasnippet ivy-xref ivy-purpose ivy-hydra ir-black-theme inkpot-theme indent-guide importmagic impatient-mode hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation heroku-theme hemisu-theme helm-make hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate golden-ratio gnuplot gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md gandalf-theme fuzzy font-lock+ flyspell-popup flyspell-correct-ivy flycheck-pos-tip flycheck-package flx-ido flatui-theme flatland-theme fill-column-indicator farmhouse-theme fancy-battery eziam-theme eyebrowse expand-region exotica-theme evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu espresso-theme eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav editorconfig dumb-jump dracula-theme dotenv-mode doom-themes doom-modeline dockerfile-mode docker django-theme diminish devdocs define-word darktooth-theme darkokai-theme darkmine-theme darkburn-theme dakrone-theme cython-mode cyberpunk-theme counsel-projectile counsel-css company-web company-statistics company-quickhelp company-anaconda column-enforce-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme clean-aindent-mode chocolate-theme cherry-blossom-theme centered-cursor-mode busybee-theme bubbleberry-theme blacken birds-of-paradise-plus-theme badwolf-theme auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes aggressive-indent afternoon-theme ace-link ac-ispell)))
+   '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
+   '(pos-tip-background-color "#FFFACE")
+   '(pos-tip-foreground-color "#272822")
+   '(pytest-global-name "python -m pytest")
+   '(vc-annotate-background "#202020")
+   '(vc-annotate-color-map
+     (quote
+      ((20 . "#C99090")
+       (40 . "#D9A0A0")
+       (60 . "#ECBC9C")
+       (80 . "#DDCC9C")
+       (100 . "#EDDCAC")
+       (120 . "#FDECBC")
+       (140 . "#6C8C6C")
+       (160 . "#8CAC8C")
+       (180 . "#9CBF9C")
+       (200 . "#ACD2AC")
+       (220 . "#BCE5BC")
+       (240 . "#CCF8CC")
+       (260 . "#A0EDF0")
+       (280 . "#79ADB0")
+       (300 . "#89C5C8")
+       (320 . "#99DDE0")
+       (340 . "#9CC7FB")
+       (360 . "#E090C7"))))
+   '(vc-annotate-very-old-color "#E090C7")
+   '(weechat-color-list
+     (quote
+      (unspecified "#272822" "#3C3D37" "#F70057" "#F92672" "#86C30D" "#A6E22E" "#BEB244" "#E6DB74" "#40CAE4" "#66D9EF" "#FB35EA" "#FD5FF0" "#74DBCD" "#A1EFE4" "#F8F8F2" "#F8F8F0"))))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(company-box-candidate ((t (:foreground "white" :height 1))))
+   '(company-box-scrollbar ((t (:inherit company-box-selection)))))
+  )
