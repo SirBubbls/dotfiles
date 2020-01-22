@@ -207,11 +207,11 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state t
 
    ;; Default font or prioritized list of fonts.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("Iosevka"
                                :size 16
-                               :weight normal
-                               :width normal
-                               :powerline-scale 0.4)
+                               :weight Regular
+                               :width ultra-expanded
+                               :powerline-scale 0.3)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
 
