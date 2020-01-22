@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: Document Meta Information
+# key: <meta
+# --
+#+TITLE: $1
+#+DESCRIPTION: $2
+#+AUTHOR: Lucas Sas
+#+EMAIL: lucassas@live.de
+#+STARTUP: latexpreview
+#+OPTIONS: \n:t
+$0
