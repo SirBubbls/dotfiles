@@ -675,6 +675,7 @@ you should place your code here."
   (if (eq system-type 'darwin)
       (setq ispell-personal-dictionary "~/.emacs.d/personal_dict")
     )
+  (kill-buffer "*spacemacs*")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
