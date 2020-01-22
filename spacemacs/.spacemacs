@@ -63,6 +63,8 @@ This function should only modify configuration layer settings."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(yasnippet-snippets
                                       drag-stuff
+                                      doom-themes
+                                      company-box
                                       all-the-icons)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -451,14 +453,14 @@ It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
   "Mode Line"
-  (setq doom-modeline-env-python-executable "python3")
-  (setq doom-modeline-icon (display-graphic-p))
-  (setq doom-modeline-major-mode-color-icon t)
+  ;; (setq doom-modeline-env-python-executable "python3")
+  ;; (setq doom-modeline-icon (display-graphic-p))
+  ;; (setq doom-modeline-major-mode-color-icon t)
   (setq doom-modeline--battery-status t)
-  (setq doom-modeline-height 10)
-
-  (add-hook 'after-init-hook 'fancy-battery-mode)
-  (add-hook 'after-init-hook 'blink-cursor-mode)
+  (setq inhibit-compacting-font-caches t)
+  ;; Performance Improvement for doom
+  (setq doom-modeline-icon (display-graphic-p))
+  ;; (Add-hook 'after-init-hook 'fancy-battery-mode)
   )
 
 (defun dotspacemacs/user-load ()
@@ -476,6 +478,16 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  (use-package doom-themes
+    :config
+    (load-theme 'doom-vibrant 1)
+    (doom-themes-org-config)
+    (setq doom-themes-treemacs-theme "doom-colors")
+    (doom-themes-neotree-config)
+    (doom-themes-visual-bell-config)
+    (setq doom-themes-enable-bold t)
+    (setq doom-themes-treemacs-theme "doom-colors")
+    )
   (global-company-mode t)
   "Move Line & Region"
   (setq vim-style-visual-line-move-text t)
