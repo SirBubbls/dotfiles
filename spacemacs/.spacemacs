@@ -478,6 +478,11 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  (setq-default dotspacemacs-line-numbers '(:relative nil
+                                                      :disabled-for-modes markdown-mode text-mode org-mode dired-mode
+                                                      :size-limit-kb 500
+                                                      ))
+
   (use-package doom-themes
     :config
     (load-theme 'doom-vibrant 1)
