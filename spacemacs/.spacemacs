@@ -493,6 +493,12 @@ you should place your code here."
                                                       :disabled-for-modes markdown-mode text-mode org-mode dired-mode
                                                       :size-limit-kb 500
                                                       ))
+  (with-eval-after-load "treemacs"
+    (define-key evil-treemacs-state-map "e" 'treemacs-previous-line)
+    (define-key evil-treemacs-state-map "n" 'treemacs-next-line)
+    (define-key evil-treemacs-state-map (kbd "C-n") 'treemacs-next-project)
+    (define-key evil-treemacs-state-map (kbd "C-e") 'treemacs-previous-project)
+    )
 
   (use-package doom-themes
     :config
