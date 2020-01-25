@@ -550,11 +550,6 @@ you should place your code here."
   (menu-bar-mode 0)
   (global-hl-todo-mode 0)
   (eyebrowse-mode 0)
-  ;; (company-statistics-mode 0)
-  (mac-mouse-wheel-mode 0)
-  (define-key global-map (kbd "M-i") 'er/expand-region)
-  (define-key global-map (kbd "M-s") 'avy-goto-symbol-1)
-
   "Distraction Free Mode"
   (define-key global-map (kbd "<f12>") 'spacemacs/toggle-distraction-free)
   (setq writeroom-width 0.65)
