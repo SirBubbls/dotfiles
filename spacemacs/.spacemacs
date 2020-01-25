@@ -497,12 +497,18 @@ you should place your code here."
                                                       :disabled-for-modes markdown-mode text-mode org-mode dired-mode
                                                       :size-limit-kb 500
                                                       ))
-  (with-eval-after-load "treemacs"
-    (define-key evil-treemacs-state-map "e" 'treemacs-previous-line)
-    (define-key evil-treemacs-state-map "n" 'treemacs-next-line)
-    (define-key evil-treemacs-state-map (kbd "C-n") 'treemacs-next-project)
-    (define-key evil-treemacs-state-map (kbd "C-e") 'treemacs-previous-project)
-    )
+  ;; (with-eval-after-load "treemacs"
+  ;;   (define-key evil-treemacs-state-map "e" 'treemacs-previous-line)
+  ;;   (define-key evil-treemacs-state-map "n" 'treemacs-next-line)
+  ;;   (define-key evil-treemacs-state-map (kbd "C-n") 'treemacs-next-project)
+  ;;   (define-key evil-treemacs-state-map (kbd "C-e") 'treemacs-previous-project)
+  ;;   )
+
+  ;; Magit Keybindings
+  ;; (with-eval-after-load "magit"
+  ;;   (define-key magit-status-mode-map "e" 'evil-previous-visual-line)
+  ;;   (define-key magit-status-mode-map "n" 'evil-next-visual-line)
+  ;;   )
 
   (use-package doom-themes
     :config
