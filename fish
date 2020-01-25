@@ -1,1 +1,0 @@
-/Users/lucas/.config/fish
