@@ -652,14 +652,16 @@ you should place your code here."
   (if (eq system-type 'darwin)
       (mac-mouse-wheel-mode 0)
     (setq ispell-personal-dictionary "~/.emacs.d/personal_dict")
-    (setenv "LANG" "en_US, de_DE")
+    )
+
+  ;; SYSTEM SPECIFIC SETTINGS
+  (if (eq system-name "Lucas-Mac-Book-Pro.local")
+      (setenv "LANG" "en_US, de_DE")
     (setq-default ispell-program-name "hunspell")
     (with-eval-after-load "ispell"
       (setq ispell-really-hunspell t)
       (setq ispell-program-name "hunspell")
       (setq ispell-dictionary "en_US,de_DE")
-      ;; ispell-set-spellchecker-params has to be called
-      ;; before ispell-hunspell-add-multi-dic will work
       (ispell-set-spellchecker-params)
       (ispell-hunspell-add-multi-dic "en_US,de_DE"))
     )
