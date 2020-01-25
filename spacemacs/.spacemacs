@@ -520,21 +520,6 @@ you should place your code here."
     (setq doom-themes-enable-bold t)
     (setq doom-themes-treemacs-theme "doom-colors")
     )
-  (setenv "LANG" "en_US, de_DE")
-  (setq-default ispell-program-name "hunspell")
-  (with-eval-after-load "ispell"
-    (setq ispell-really-hunspell t)
-    (setq ispell-program-name "hunspell")
-    (setq ispell-dictionary "en_US,de_DE")
-    ;; ispell-set-spellchecker-params has to be called
-    ;; before ispell-hunspell-add-multi-dic will work
-    (ispell-set-spellchecker-params)
-    (ispell-hunspell-add-multi-dic "en_US,de_DE"))
-
-  ;; (setq ispell-program-name "hunspell")
-  ;; (add-to-list 'ispell-local-dictionary-alist '(("combined" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US,de_DE") nil utf-8)))
-  ;; (setq ispell-local-dictionary "combined")
-  ;; (setq ispell-dictionary "combined")
 
   "Latex"
   (setq org-preview-latex-image-directory "/tmp/latex/")
