@@ -698,11 +698,22 @@ you should place your code here."
       (setenv "no_proxy" "127.0.0.1")
       )
 
-
   "MAC OS"
   (if (eq system-type 'darwin)
-      (setq ispell-personal-dictionary "~/.emacs.d/personal_dict")
+      (mac-mouse-wheel-mode 0)
+    (setq ispell-personal-dictionary "~/.emacs.d/personal_dict")
+    (setenv "LANG" "en_US, de_DE")
+    (setq-default ispell-program-name "hunspell")
+    (with-eval-after-load "ispell"
+      (setq ispell-really-hunspell t)
+      (setq ispell-program-name "hunspell")
+      (setq ispell-dictionary "en_US,de_DE")
+      ;; ispell-set-spellchecker-params has to be called
+      ;; before ispell-hunspell-add-multi-dic will work
+      (ispell-set-spellchecker-params)
+      (ispell-hunspell-add-multi-dic "en_US,de_DE"))
     )
+
   (kill-buffer "*spacemacs*")
   )
 
