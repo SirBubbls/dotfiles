@@ -558,7 +558,6 @@ you should place your code here."
   "Distraction Free Mode"
   (define-key global-map (kbd "<f12>") 'spacemacs/toggle-distraction-free)
   (setq writeroom-width 0.65)
-
   "Start Emacs Client in Fullscreen"
   (add-to-list 'default-frame-alist '(fullscreen . fullboth))
   "Fix for search functions"
@@ -566,16 +565,33 @@ you should place your code here."
   "Code Blocks in ORG-Mode"
   (setq org-src-tab-acts-natively t)
   (spacemacs/toggle-vi-tilde-fringe-off)
-  ;; (setq-default mode-line-format nil)
   (set-fringe-mode 0)
   (set-face-background 'vertical-border "gray")
   (set-face-foreground 'vertical-border (face-background 'vertical-border))
-  (spacemacs/toggle-mode-line)
-
   (global-company-mode t)
   (global-aggressive-indent-mode t)
   (setq dotspacemacs-mode-line-unicode-symbols nil)
+  "Evil Search"
+  (add-hook 'imenu-after-jump-hook 'reposition-window)
+  (advice-add 'evil-ex-search-next :after
+              (lambda (&rest x) (evil-scroll-line-to-center (line-number-at-pos))))
+  (advice-add 'evil-ex-search-previous :after
+              (lambda (&rest x) (evil-scroll-line-to-center (line-number-at-pos))))
+  "Copy & Paste "
+  (setq save-interprogram-paste-before-kill t)
+  (setq company-idle-delay 0.1)
+  (setq company-minimum-prefix-length 2)
+  (setq company-selection-wrap-around t)
+  "Better Performance"
+  (setq redisplay-dont-pause t)
+  "Fix for symbolic link prompt"
+  (setq vc-follow-symlinks nil)
+  (spacemacs/toggle-highlight-current-line-globally-off)
+  "qq now closes frame not emacs (for daemon mode)"
+  (setq auto-save-default nil)
 
+  (define-key global-map (kbd "M-i") 'er/expand-region)
+  (define-key global-map (kbd "M-s") 'avy-goto-symbol-1)
   "Move Line & Region"
   (setq vim-style-visual-line-move-text t)
   (define-key evil-normal-state-map (kbd "M-n") (lambda () (interactive) (move-text-line-down) (indent-for-tab-command)))
@@ -584,47 +600,12 @@ you should place your code here."
   (define-key evil-insert-state-map (kbd "M-n") (lambda () (interactive) (move-text-line-down) (indent-for-tab-command)))
   (define-key evil-visual-state-map (kbd "M-n") 'drag-stuff-down)
   (define-key evil-visual-state-map (kbd "M-e") 'drag-stuff-up)
-
   "Imenu and Tab"
   (define-key evil-normal-state-map (kbd "<backtab>") 'imenu)
-  ;; (define-key evil-normal-state-map (kbd "<tab>") 'indent-for-tab-command)
-  ;; (define-key evil-insert-state-map (kbd "<tab>") 'indent-for-tab-command)
-
-  "Evil Search"
-  (add-hook 'imenu-after-jump-hook 'reposition-window)
-  (advice-add 'evil-ex-search-next :after
-              (lambda (&rest x) (evil-scroll-line-to-center (line-number-at-pos))))
-  (advice-add 'evil-ex-search-previous :after
-              (lambda (&rest x) (evil-scroll-line-to-center (line-number-at-pos))))
-
-  "Copy & Paste "
-  (setq save-interprogram-paste-before-kill t)
-  (setq company-idle-delay 0.1)
-  (setq company-minimum-prefix-length 2)
-  (setq company-selection-wrap-around t)
-
-  "Better Performance"
-  (setq redisplay-dont-pause t)
-
-  "Fix for symbolic link prompt"
-  (setq vc-follow-symlinks nil)
-
-  (spacemacs/toggle-highlight-current-line-globally-off)
-
-  "qq now closes frame not emacs (for daemon mode)"
   (spacemacs/set-leader-keys "qq" 'spacemacs/frame-killer)
-
-  (setq auto-save-default nil)
-
-  "Flycheck"
-  ;; (setq flycheck-python-flake8-executable "python3")
-  ;; (setq flycheck-python-pycompile-executable "python3")
-  ;; (setq flycheck-python-pylint-executable "python3")
-
   "Zoom In/Out"
   (define-key evil-normal-state-map (kbd "C-=") 'zoom-frm-in)
   (define-key evil-normal-state-map (kbd "C--") 'zoom-frm-out)
-
   "Window Naviagation"
   (spacemacs/set-leader-keys "wn" 'evil-window-down)
   (spacemacs/set-leader-keys "wN" 'evil-window-move-very-bottom)
@@ -632,41 +613,30 @@ you should place your code here."
   (spacemacs/set-leader-keys "wE" 'evil-window-move-very-top)
   (spacemacs/set-leader-keys "wi" 'evil-window-right)
   (spacemacs/set-leader-keys "wI" 'evil-window-move-far-right)
-
   "I Menu"
   (define-key evil-normal-state-map (kbd "C-i") 'imenu)
-
   "Colemak Keybindings"
   (define-key evil-normal-state-map "u" 'evil-insert)
-
   (define-key evil-normal-state-map "n" 'evil-next-line)
   (define-key evil-normal-state-map "e" 'evil-previous-line)
   (define-key evil-normal-state-map "i" 'forward-char)
   (define-key evil-visual-state-map "i" 'forward-char)
-
   (define-key evil-visual-state-map "n" 'evil-next-line)
   (define-key evil-visual-state-map "e" 'evil-previous-line)
   (define-key evil-visual-state-map "i" 'forward-char)
-
   (define-key evil-normal-state-map "k" 'evil-ex-search-previous)
   (define-key evil-normal-state-map "K" 'evil-ex-search-next)
-
   (define-key evil-normal-state-map "F" 'evil-forward-WORD-end)
   (define-key evil-normal-state-map "f" 'evil-forward-word-end)
   (define-key evil-visual-state-map "F" 'evil-forward-WORD-end)
   (define-key evil-visual-state-map "f" 'evil-forward-word-end)
-
   (define-key evil-normal-state-map "I" 'evil-window-bottom)
   (define-key evil-visual-state-map "I" 'evil-window-bottom)
-
   (define-key evil-normal-state-map "N" 'evil-join)
-
   ;; "Comment/Uncomment"
   (define-key evil-visual-state-map "\M-/" 'evilnc-comment-or-uncomment-lines)
   (define-key evil-normal-state-map (kbd "M-/") 'evilnc-comment-or-uncomment-lines)
-
   (define-key evil-visual-state-map "rr" 'replace-regexp)
-
   "Umlaute"
   (define-key key-translation-map (kbd "C-u") "ü")
   (define-key key-translation-map (kbd "C-S-U") "Ü")
@@ -675,7 +645,6 @@ you should place your code here."
   (define-key key-translation-map (kbd "C-a") "ä")
   (define-key key-translation-map (kbd "C-S-A") "Ä")
   (define-key key-translation-map (kbd "C-s") "ß")
-
   (define-key evil-mode (kbd "C-;") 'flyspell-auto-correct-previous-word)
 
   "Windows Specific Settings"
