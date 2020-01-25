@@ -45,6 +45,9 @@ This function should only modify configuration layer settings."
                       auto-completion-enable-sort-by-usage t)
      emacs-lisp
      git
+     (keyboard-layout :variables
+                      kl-layout 'colemak-hnei
+                      kl-disabled-configurations '(treemacs))
      docker
      (python :variables
              python-test-runner 'pytest
