@@ -33,7 +33,10 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(shell-scripts
-     typescript
+     ;; Necessary to get autocompletion
+     ;; npm install --save @types/browserify
+     (typescript :variables
+                 typescript-backend 'tide)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
