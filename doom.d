@@ -1,0 +1,1 @@
+/Users/lucas/Dropbox/Configurations/dotfiles/doom/doom.d
