@@ -27,9 +27,17 @@
 (define-key key-translation-map (kbd "C-a") "ä")
 (define-key key-translation-map (kbd "C-S-A") "Ä")
 (define-key key-translation-map (kbd "C-s") "ß")
+(define-key evil-visual-state-map (kbd "M-n") 'drag-stuff-down)
+(define-key evil-visual-state-map (kbd "M-e") 'drag-stuff-up)
+(define-key! evil-normal-state-map (kbd "M-e") 'drag-stuff-up)
+(define-key! evil-normal-state-map (kbd "M-n") 'drag-stuff-down)
 
 (map! :leader (:prefix "w"
                 :desc "evil-window-right" "i" #'evil-window-right
                 :desc "evil-window-down" "n" #'evil-window-down
                 :desc "evil-window-down" "e" #'evil-window-up
-                :desc "evil-window-up" "u" #'evil-window-up))
+                :desc "evil-window-up" "u" #'evil-window-up)
+      :leader (:prefix "s"
+                :desc "i-edit" "e" #'iedit-mode)
+      :leader (:prefix "f"
+                :desc "treemacs" "t" #'treemacs))

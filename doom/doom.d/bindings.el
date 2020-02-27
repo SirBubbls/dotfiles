@@ -13,7 +13,7 @@
       :n "e" 'evil-previous-line
       :n "i" 'evil-forward-char
       :n "u" 'evil-insert
-
+      :n (kbd "s-b") 'evil-switch-to-windows-last-buffer
       (:after company
         :map company-active-map
         "C-n"         #'company-select-next
@@ -26,4 +26,5 @@
       :nv "e" 'evil-previous-line
       )
 
+(define-key key-translation-map "\d" "\e")
 (define-key evil-visual-state-map "n" 'evil-next-line)
