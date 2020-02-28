@@ -27,3 +27,4 @@
       )
 
 (define-key evil-visual-state-map "n" 'evil-next-line)
+(define-key evil-normal-state-map (kbd "M-/") 'comment-line)
