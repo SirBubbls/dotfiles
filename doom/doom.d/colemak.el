@@ -21,6 +21,10 @@
 (define-key evil-visual-state-map "I" 'evil-window-bottom)
 (define-key evil-normal-state-map "N" 'evil-join)
 
+(map! :n "h" 'evil-backward-char
+      :n "n" 'evil-next-line
+      :n "e" 'evil-previous-line
+      :n "i" 'evil-forward-char)
 ;; drag-stuff
 (define-key evil-visual-state-map (kbd "M-n") 'drag-stuff-down)
 (define-key evil-visual-state-map (kbd "M-e") 'drag-stuff-up)
