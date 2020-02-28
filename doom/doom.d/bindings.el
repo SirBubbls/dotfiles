@@ -24,6 +24,8 @@
       :map evil-visual-state-map
       :nv "n" 'evil-next-line
       :nv "e" 'evil-previous-line
+      :leader (:prefix "b"
+                :desc "list-buffers" "b" #'ivy-switch-buffer)
       )
 
 (define-key evil-visual-state-map "n" 'evil-next-line)
