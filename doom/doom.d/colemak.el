@@ -1,6 +1,6 @@
 ;;; ~/Dropbox/Configurations/dotfiles/doom/doom.d/colemak.el -*- lexical-binding: t; -*-
 
-
+;; Evil Movement
 (define-key evil-normal-state-map (kbd "<backtab>") 'imenu)
 (define-key evil-normal-state-map (kbd "C-i") 'imenu)
 (define-key evil-normal-state-map "u" 'evil-insert)
@@ -20,6 +20,14 @@
 (define-key evil-normal-state-map "I" 'evil-window-bottom)
 (define-key evil-visual-state-map "I" 'evil-window-bottom)
 (define-key evil-normal-state-map "N" 'evil-join)
+
+;; drag-stuff
+(define-key evil-visual-state-map (kbd "M-n") 'drag-stuff-down)
+(define-key evil-visual-state-map (kbd "M-e") 'drag-stuff-up)
+(define-key! evil-normal-state-map (kbd "M-e") 'drag-stuff-up)
+(define-key! evil-normal-state-map (kbd "M-n") 'drag-stuff-down)
+
+;; Special Symbols
 (define-key key-translation-map (kbd "C-u") "ü")
 (define-key key-translation-map (kbd "C-S-U") "Ü")
 (define-key key-translation-map (kbd "C-o") "ö")
@@ -27,10 +35,17 @@
 (define-key key-translation-map (kbd "C-a") "ä")
 (define-key key-translation-map (kbd "C-S-A") "Ä")
 (define-key key-translation-map (kbd "C-s") "ß")
-(define-key evil-visual-state-map (kbd "M-n") 'drag-stuff-down)
-(define-key evil-visual-state-map (kbd "M-e") 'drag-stuff-up)
-(define-key! evil-normal-state-map (kbd "M-e") 'drag-stuff-up)
-(define-key! evil-normal-state-map (kbd "M-n") 'drag-stuff-down)
+
+;; Treemacs
+(after! treemacs
+  (define-key evil-treemacs-state-map "n" 'treemacs-next-line)
+  (define-key evil-treemacs-state-map "e" 'treemacs-previous-line)
+  (define-key treemacs-mode-map "n" 'treemacs-next-line)
+  (define-key treemacs-mode-map "e" 'treemacs-previous-line))
+
+;; IVY
+(with-eval-after-load "ivy"
+  (define-key ivy-mode-map (kbd "C-e") 'ivy-previous-line))
 
 (map! :leader (:prefix "w"
                 :desc "evil-window-right" "i" #'evil-window-right

@@ -50,3 +50,5 @@
 ;; they are implemented.
 (load! "bindings")
 (load! "colemak")
+
+(toggle-frame-maximized)

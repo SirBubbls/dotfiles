@@ -26,5 +26,4 @@
       :nv "e" 'evil-previous-line
       )
 
-(define-key key-translation-map "\d" "\e")
 (define-key evil-visual-state-map "n" 'evil-next-line)
