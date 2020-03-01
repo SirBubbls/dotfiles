@@ -52,3 +52,6 @@
 (load! "colemak")
 
 (toggle-frame-maximized)
+
+(after! typescript-mode
+  (setq-default typescript-indent-level 2))
