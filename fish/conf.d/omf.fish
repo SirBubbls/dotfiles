@@ -25,6 +25,7 @@ set PATH /home/sirbubbls/.linuxbrew/Homebrew/bin/ $PATH
 alias p='python3'
 alias reload='source ~/.config/fish/conf.d/omf.fish;tmux source-file ~/.tmux.conf'
 alias fetch='neofetch'
+alias dooms="~/.emacs.d/bin/doom sync"
 alias gaa='git add -A'
 alias ga='git add'
 alias gc='git commit -m'
@@ -36,6 +37,7 @@ alias gtmsummary='gtm report -last-month -format summary'
 alias cl=clear
 alias sl=ls
 alias lsa='ls -la'
+alias doom='~/.emacs.d/bin/doom'
 alias python=python3
 alias pip='pip3'
 alias .vimrc='vim ~/.vimrc'
