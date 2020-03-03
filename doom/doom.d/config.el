@@ -55,3 +55,8 @@
 
 (after! typescript-mode
   (setq-default typescript-indent-level 2))
+
+;; System Specific Settings
+(when (eq 'system-type 'darwin) (load! "darwin"))
+(when (eq 'system-type 'ms-dos) (load! "msdos"))
+(when (eq 'system-type 'gnu/linux) (load! "linux"))
