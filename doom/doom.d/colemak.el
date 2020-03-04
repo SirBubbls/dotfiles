@@ -61,5 +61,5 @@
       :leader (:prefix "f"
                 :desc "treemacs" "t" #'treemacs))
 
-(evil-define-key nil evil-motion-state-map "n" 'evil-next-line)
-(evil-define-key nil evil-motion-state-map "e" 'evil-previous-line)
+(evil-define-key evil-magit-state magit-mode-map "n" 'evil-next-visual-line)
+(evil-define-key evil-magit-state magit-mode-map "e" 'evil-previous-visual-line)
