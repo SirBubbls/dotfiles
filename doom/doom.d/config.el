@@ -57,6 +57,10 @@
 (after! typescript-mode
   (setq-default typescript-indent-level 2))
 
+(after! org-mode
+  (setq org-list-description-max-indent 5)
+  (setq org-adapt-indentation nil))
+
 ;; System Specific Settings
 (when (eq 'system-type 'darwin) (load! "darwin"))
 (when (eq 'system-type 'ms-dos) (load! "msdos"))
