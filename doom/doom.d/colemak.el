@@ -60,3 +60,6 @@
                 :desc "i-edit" "e" #'iedit-mode)
       :leader (:prefix "f"
                 :desc "treemacs" "t" #'treemacs))
+
+(evil-define-key nil evil-motion-state-map "n" 'evil-next-line)
+(evil-define-key nil evil-motion-state-map "e" 'evil-previous-line)
