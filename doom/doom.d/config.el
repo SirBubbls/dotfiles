@@ -55,6 +55,7 @@
   (setq-default typescript-indent-level 2))
 
 (after! org-mode
+  (display-line-numbers-mode 0)
   (setq org-list-description-max-indent 5)
   (setq org-adapt-indentation nil))
 
