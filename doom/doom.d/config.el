@@ -60,6 +60,13 @@
 (after! org-mode
   (setq org-list-description-max-indent 5)
   (setq org-adapt-indentation nil))
+
+(add-hook 'org-mode-hook (lambda()
+  (setq org-list-description-max-indent 5)
+  (display-line-numbers-mode 0)
+  (setq org-adapt-indentation nil)
+))
+
 ;; Line Numbers
 (set-face-foreground 'line-number "#404040")
 ;; (set-face-foreground 'line-number-current-line "#4287f5")   ;; Blue
