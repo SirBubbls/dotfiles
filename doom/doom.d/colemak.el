@@ -61,5 +61,6 @@
       :leader (:prefix "f"
                 :desc "treemacs" "t" #'treemacs))
 
+(add-hook 'magit-mode-hook (lambda ()
 (evil-define-key evil-magit-state magit-mode-map "n" 'evil-next-visual-line)
-(evil-define-key evil-magit-state magit-mode-map "e" 'evil-previous-visual-line)
+(evil-define-key evil-magit-state magit-mode-map "e" 'evil-previous-visual-line)))
