@@ -69,6 +69,14 @@
   (set-face-foreground 'line-number-current-line "#f74b00")
   (set-face-foreground 'line-number "#404040")
 ))
+
+
+;; Disable Prog Mode
+(add-hook 'prog-mode-hook (lambda ()
+  (line-number-mode 0)
+  (column-number-mode 0)
+))
+
 ;; Keybindings
 (load! "bindings")
 (load! "colemak")
