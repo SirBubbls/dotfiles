@@ -34,3 +34,6 @@
 (global-set-key (kbd "s-t") (eshell))
 (global-set-key (kbd "M--") 'doom/decrease-font-size)
 (global-set-key (kbd "M-=") 'doom/increase-font-size)
+
+(global-set-key (kbd "M-n") 'shrink-window)
+(global-set-key (kbd "M-e") 'enlarge-window)
