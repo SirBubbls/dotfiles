@@ -65,9 +65,10 @@
 ))
 
 ;; Line Numbers
-(set-face-foreground 'line-number "#404040")
-;; (set-face-foreground 'line-number-current-line "#4287f5")   ;; Blue
-(set-face-foreground 'line-number-current-line "#f74b00")
+(add-hook 'display-line-numbers-mode-hook (lambda ()
+  (set-face-foreground 'line-number-current-line "#f74b00")
+  (set-face-foreground 'line-number "#404040")
+))
 ;; Keybindings
 (load! "bindings")
 (load! "colemak")
