@@ -49,10 +49,7 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
-(load! "bindings")
-(load! "colemak")
 
-(toggle-frame-maximized)
 
 (after! typescript-mode
   (setq-default typescript-indent-level 2))
@@ -71,7 +68,11 @@
 (set-face-foreground 'line-number "#404040")
 ;; (set-face-foreground 'line-number-current-line "#4287f5")   ;; Blue
 (set-face-foreground 'line-number-current-line "#f74b00")
+;; Keybindings
+(load! "bindings")
+(load! "colemak")
 
+(toggle-frame-maximized)
 ;; System Specific Settings
 (when (eq 'system-type 'darwin) (load! "darwin"))
 (when (eq 'system-type 'ms-dos) (load! "msdos"))
