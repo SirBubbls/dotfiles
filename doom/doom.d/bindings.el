@@ -31,7 +31,6 @@
 (define-key evil-visual-state-map "n" 'evil-next-line)
 (define-key evil-normal-state-map (kbd "M-/") 'comment-line)
 
-(global-set-key (kbd "s-t") (eshell))
 (global-set-key (kbd "M--") 'doom/decrease-font-size)
 (global-set-key (kbd "M-=") 'doom/increase-font-size)
 
