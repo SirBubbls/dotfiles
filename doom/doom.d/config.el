@@ -60,6 +60,10 @@
 (after! org-mode
   (setq org-list-description-max-indent 5)
   (setq org-adapt-indentation nil))
+;; Line Numbers
+(set-face-foreground 'line-number "#404040")
+;; (set-face-foreground 'line-number-current-line "#4287f5")   ;; Blue
+(set-face-foreground 'line-number-current-line "#f74b00")
 
 ;; System Specific Settings
 (when (eq 'system-type 'darwin) (load! "darwin"))
