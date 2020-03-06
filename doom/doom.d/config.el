@@ -78,6 +78,13 @@
   (column-number-mode 0)
 ))
 
+(add-hook 'markdown-mode-hook (lambda ()
+  (display-line-numbers-mode 0)
+))
+
+(add-hook 'ein:notebook-mode-hook (lambda ()
+  (setq-default ein:output-area-inlined-images t) ;; Inline Images
+))
 ;; Keybindings
 (load! "bindings")
 (load! "colemak")
