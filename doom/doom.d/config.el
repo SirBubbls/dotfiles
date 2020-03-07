@@ -94,3 +94,7 @@
 (when (eq 'system-type 'darwin) (load! "darwin"))
 (when (eq 'system-type 'ms-dos) (load! "msdos"))
 (when (eq 'system-type 'gnu/linux) (load! "linux"))
+
+;; Loading Personal Information like credentials
+(if (file-exists-p "personal")
+    (load! "personal"))
