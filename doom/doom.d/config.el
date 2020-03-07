@@ -91,9 +91,9 @@
 
 (toggle-frame-maximized)
 ;; System Specific Settings
-(when (eq 'system-type 'darwin) (load! "darwin"))
-(when (eq 'system-type 'ms-dos) (load! "msdos"))
-(when (eq 'system-type 'gnu/linux) (load! "linux"))
+(if (eq 'system-type 'darwin) (load! "darwin"))
+(if (eq 'system-type 'ms-dos) (load! "msdos"))
+(if (eq 'system-type 'gnu/linux) (load! "linux"))
 
 ;; Loading Personal Information like credentials
 (if (file-exists-p "personal")
