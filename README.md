@@ -1,2 +1,0 @@
-# Spacemacs Config
-

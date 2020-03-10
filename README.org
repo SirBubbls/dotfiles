@@ -1,0 +1,9 @@
+* My personal dotfiles and configurations
+
+** FISH Shell
+
+** Doom Emacs 
+
+** Spacemacs
+
+** VIM
