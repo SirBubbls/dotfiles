@@ -85,11 +85,15 @@
 (add-hook 'ein:notebook-mode-hook (lambda ()
   (setq-default ein:output-area-inlined-images t) ;; Inline Images
 ))
+
+(setq doom-modeline-github 't)
+
 ;; Keybindings
 (load! "bindings")
 (load! "colemak")
 
 (toggle-frame-maximized)
+
 ;; System Specific Settings
 (if (eq 'system-type 'darwin) (load! "darwin"))
 (if (eq 'system-type 'ms-dos) (load! "msdos"))
