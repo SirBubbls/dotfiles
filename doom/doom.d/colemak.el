@@ -75,6 +75,8 @@
   (unbind-key "n" magit-mode-map)
   )
 
-(add-hook 'org-agenda-mode-hook (lambda ()
-(evil-define-key evil-magit-state magit-mode-map "n" 'evil-next-visual-line)
-(evil-define-key evil-magit-state magit-mode-map "e" 'evil-previous-visual-line)))
+(after! evil-org-agenda
+  (define-key evil-motion-state-map "n" 'org-agenda-next-line)
+  (define-key evil-motion-state-map "e" 'org-agenda-previous-line)
+  (evil-define-key evil-org-agenda-mode evil-org-agenda-mode-map "n" 'org-agenda-next-line)
+  (evil-define-key evil-magit-state magit-mode-map "e" 'org-agenda-previous-line))
