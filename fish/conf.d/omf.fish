@@ -47,7 +47,7 @@ alias pin='ping www.google.de'
 alias tmuxkill='tmux kill-session -a'
 alias ls='ls -G1'
 alias ll='ls -G'
-alias webserver='python2 -m SimpleHTTPServer'
+alias simpleserver='python2 -m SimpleHTTPServer'
 alias dropignore='xattr -w com.dropbox.ignored 1'
 
 # LSCOLORS
