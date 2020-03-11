@@ -62,9 +62,18 @@
                 :desc "treemacs" "t" #'treemacs))
 
 ;; Magit
+;; TODO cleanup
 (after! magit-gitflow
-  (evil-define-key evil-magit-state magit-mode-map "n" 'evil-next-visual-line)
-  (evil-define-key evil-magit-state magit-mode-map "e" 'evil-previous-visual-line))
+  (define-key evil-motion-state-map "n" 'evil-next-visual-line)
+  (define-key evil-motion-state-map "e" 'evil-previous-line)
+  (define-key evil-normal-state-map "e" 'evil-previous-line)
+  (evil-define-key 'visual magit-mode-map "n" 'evil-next-visual-line)
+  (evil-define-key 'normal magit-mode-map "n" 'evil-next-visual-line)
+  (evil-define-key 'normal evil-magit-state magit-mode-map "n" 'evil-next-visual-line)
+  (evil-define-key 'normal evil-magit-state magit-mode-map "e" 'evil-previous-visual-line)
+  (unbind-key "e" magit-mode-map)
+  (unbind-key "n" magit-mode-map)
+  )
 
 (add-hook 'org-agenda-mode-hook (lambda ()
 (evil-define-key evil-magit-state magit-mode-map "n" 'evil-next-visual-line)
