@@ -46,4 +46,5 @@
   (define-key evil-normal-state-map (kbd "K") 'iedit-prev-occurrence)
   (define-key evil-normal-state-map (kbd "f") 'iedit-restrict-function)
   (define-key evil-normal-state-map (kbd "l") 'iedit-restrict-current-line)
+  (define-key evil-normal-state-map (kbd "'") 'iedit-show/hide-unmatched-lines)
   (define-key! iedit-mode-occurrence-keymap "<tab>" 'iedit-toggle-selection))
