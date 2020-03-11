@@ -38,3 +38,9 @@
 
 (global-set-key (kbd "M-n") 'shrink-window)
 (global-set-key (kbd "M-e") 'enlarge-window)
+
+(after! iedit
+  (define-key evil-normal-state-map (kbd "<tab>") 'iedit-toggle-selection)
+  (define-key evil-normal-state-map (kbd "k") 'iedit-next-occurrence)
+  (define-key evil-normal-state-map (kbd "K") 'iedit-prev-occurrence)
+  (define-key! iedit-mode-occurrence-keymap "<tab>" 'iedit-toggle-selection))
