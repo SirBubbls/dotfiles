@@ -100,5 +100,5 @@
 (if (eq 'system-type 'gnu/linux) (load! "linux"))
 
 ;; Loading Personal Information like credentials
-(if (file-exists-p "personal")
+(if (file-exists-p "personal.el")
     (load! "personal"))
