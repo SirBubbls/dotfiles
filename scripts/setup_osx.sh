@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+#
+# Mac OS Specific Settings
+#
+
+# Dock
+defaults write com.apple.dock autohide-time-modifier -float 0.5;
+defaults write com.apple.Dock autohide-delay -float 0;
+killall Dock;
+
+
+#
+# Software Installation
+#
+
+# Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)";
+
+# Fish shell
+brew install fish;
+cat /etc/shells | grep /usr/local/bin/fish || sudo sh -c 'echo "/usr/local/bin/fish" >> /etc/shells';
+chsh -s /usr/local/bin/fish;
+
+# Oh my fish install
+curl -L https://get.oh-my.fish | fish;
+omf install bobthefish;
+
+# Brew Install List
+brew install cask;
+# Fonts
+brew tap homebrew/cask-fonts;
+brew cask install font-hack-nerd-font;
+
+brew install neofetch gist;
+
+#
+# Emacs
+#
+brew tap d12frosted/emacs-plus;
+brew install emacs-plus;
+# Doom Emacs
+git clone https://github.com/hlissner/doom-emacs ~/.emacs.d;
+~/.emacs.d/bin/doom install;
+
+# Languages
+brew install iterm;
+brew install python3;
+brew install npm;
+brew install clang;
+brew install cmake;
+brew install coreutils;
+brew install fd;
+
+# Links
+ln -s ~/Dropbox/Projects ~/Projects;
+
+# Latex
+brew cask install mactex-no-gui;
+ln -s /Library/TeX/texbin/latex /usr/local/bin/latex;
+ln -s /Library/TeX/texbin/dvipng /usr/local/bin/dvipng;
+ln -s /Library/TeX/texbin/pdflatex /usr/local/bin/pdflatex;
