@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 if [[ "$(hostnamectl)" == *"Ubuntu"* ]]; then
     echo "Ubuntu";
     # Fish
