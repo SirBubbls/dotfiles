@@ -1,6 +1,8 @@
 #!/usr/bin/bash
 if [[ "$(hostnamectl)" == *"Ubuntu"* ]]; then
     echo "Ubuntu";
+    apt install -y git;
+
     # Fish
     apt-get install -y fish;
     chsh -s /usr/bin/fish;
