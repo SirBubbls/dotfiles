@@ -32,7 +32,7 @@ brew install cask;
 brew tap homebrew/cask-fonts;
 brew cask install font-hack-nerd-font;
 
-brew install neofetch gist;
+brew install neofetch gist wget;
 
 #
 # Emacs
