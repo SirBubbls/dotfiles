@@ -10,6 +10,7 @@ ln -s "$parent_path"/spacemacs/.spacemacs ~/.spacemacs;
 # .doom files
 rm -r ~/.doom.d || true;
 ln -s "$parent_path"/doom/doom.d ~/.doom.d;
+~/.emacs.d/bin/doom sync || true;
 
 # personal dict
 rm ~/.emacs.d/personal_dict || true;
