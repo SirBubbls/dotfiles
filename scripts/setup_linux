@@ -19,6 +19,7 @@ if [[ "$(hostnamectl)" == *"Ubuntu"* ]]; then
     cd ~/.fonts;
     unzip ~/Iosevka.zip;
     fc-cache -f -v;
+    rm ~/Iosevka.zip;
 
     # Languages
     apt-get install -y cmake;
