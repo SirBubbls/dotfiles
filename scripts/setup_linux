@@ -25,11 +25,10 @@ if [[ "$(hostnamectl)" == *"Ubuntu"* ]]; then
     apt-get install -y cmake;
     apt install -y python3-pip;
 
-    curl -s https://sirbubbls.github.io/dotfiles/scripts/setup_dotfiles | bash || true;
+    curl -s https://sirbubbls.github.io/dotfiles/scripts/setup_dotfiles | bash;
+
+    curl -L https://get.oh-my.fish | fish;
+    omf install -y bobthefish;
 else
     echo "Unsupported";
 fi
-
-
-curl -L https://get.oh-my.fish | fish;
-omf install -y bobthefish;
