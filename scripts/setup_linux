@@ -1,31 +1,31 @@
 #!/usr/bin/bash
 if [[ "$(hostnamectl)" == *"Ubuntu"* ]]; then
     echo "Ubuntu";
-    apt install -y git;
+    sudo apt install -y git;
 
     # Fish
-    apt-get install -y fish;
-    chsh -s /usr/bin/fish;
+    sudo apt-get install -y fish;
+    sudo chsh -s /usr/bin/fish;
 
     # Emacs
     add-apt-repository ppa:kelleyk/emacs;
-    apt update;
-    apt install -y emacs26;
+    sudo apt update;
+    sudo apt install -y emacs26;
     git clone https://github.com/hlissner/doom-emacs ~/.emacs.d;
     ~/.emacs.d/bin/doom install --yes;
 
     # Font
-    apt-get install -y unzip;
+    sudo apt-get install -y unzip;
     mkdir ~/.fonts;
     wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Iosevka.zip ~/.fonts/Iosevka.zip;
     cd ~/.fonts;
     unzip ~/Iosevka.zip;
-    fc-cache -f -v;
+    sudo fc-cache -f -v;
     rm ~/Iosevka.zip;
 
     # Languages
-    apt-get install -y cmake;
-    apt install -y python3-pip;
+    sudo apt-get install -y cmake;
+    sudo apt install -y python3-pip;
 
     curl -s https://sirbubbls.github.io/dotfiles/scripts/setup_dotfiles | bash;
 
