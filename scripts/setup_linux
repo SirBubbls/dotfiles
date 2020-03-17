@@ -25,7 +25,7 @@ if [[ "$(hostnamectl)" == *"Ubuntu"* ]]; then
     apt-get install -y cmake;
     apt install -y python3-pip;
 
-    curl -s https://sirbubbls.github.io/dotfiles/scripts/setup_dotfiles | bash;
+    curl -s https://sirbubbls.github.io/dotfiles/scripts/setup_dotfiles | bash || true;
 else
     echo "Unsupported";
 fi
