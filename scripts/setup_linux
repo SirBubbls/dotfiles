@@ -20,9 +20,13 @@ if [[ "$(hostnamectl)" == *"Ubuntu"* ]]; then
     wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Iosevka.zip ~/.fonts/Iosevka.zip;
     cd ~/.fonts;
     unzip ~/Iosevka.zip;
+    fc-cache -f -v;
 
     # Languages
     apt-get install cmake;
+    apt install -y python3-pip;
+
+    curl -s https://sirbubbls.github.io/dotfiles/scripts/setup_dotfiles | bash;
 else
     echo "Unsupported";
 fi
