@@ -50,6 +50,9 @@
 ;; they are implemented.
 
 
+;; Quitting without Confirmation
+(setq confirm-kill-processes nil)
+(setq confirm-kill-emacs nil)
 
 (after! typescript-mode
   (setq-default typescript-indent-level 2))
