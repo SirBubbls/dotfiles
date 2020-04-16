@@ -28,7 +28,8 @@
                 :desc "list-buffers" "b" #'ivy-switch-buffer)
 )
 (map! :leader :desc "Next Workspace" "]" (lambda! (+workspace/switch-right))
-      :leader :desc "Previous Workspace" "[" (lambda! (+workspace/switch-left)))
+      :leader :desc "Previous Workspace" "[" (lambda! (+workspace/switch-left))
+      :leader :desc "Open Eshell" "T" 'eshell)
 
 (define-key evil-visual-state-map "n" 'evil-next-line)
 (define-key evil-normal-state-map (kbd "M-/") 'comment-line)
