@@ -28,6 +28,9 @@
 ;; If you intend to use org, it is recommended you change this!
 (setq org-directory "~/Dropbox/Org/")
 
+(after! org
+  (load! "configurations/latex-fragment")
+  )
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
 (setq display-line-numbers-type 'relative)
