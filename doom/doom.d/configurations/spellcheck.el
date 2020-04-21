@@ -5,4 +5,5 @@
   (setq ispell-dictionary "en_US,de_DE")
   (ispell-set-spellchecker-params)
   (ispell-hunspell-add-multi-dic "en_US,de_DE")
+  (setq ispell-personal-dictionary "~/.doom.d/personal_dict")
 )
