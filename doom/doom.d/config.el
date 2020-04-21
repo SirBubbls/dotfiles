@@ -108,3 +108,5 @@
 ;; Loading Personal Information like credentials
 (if (file-exists-p "personal.el")
     (load! "personal"))
+
+(load! "configurations/spellcheck")
