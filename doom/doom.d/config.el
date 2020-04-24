@@ -88,9 +88,8 @@
   (display-line-numbers-mode 0)
 ))
 
-(add-hook 'ein:notebook-mode-hook (lambda ()
-  (setq-default ein:output-area-inlined-images t) ;; Inline Images
-))
+(add-hook! ein:notebook-mode
+  (load! "~/.doom.d/configurations/ein-config"))
 
 (setq doom-modeline-github 't)
 
