@@ -109,3 +109,4 @@
     (load! "personal"))
 
 (load! "configurations/spellcheck")
+(load! "configurations/clang")
