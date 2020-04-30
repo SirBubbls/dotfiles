@@ -112,4 +112,5 @@
 (load! "configurations/spellcheck")
 (load! "configurations/clang")
 (load! "configurations/ignore-files")
+(load! "configurations/yasnippet-integration")
 (add-hook 'after-save-hook 'git-time-metric-record)
