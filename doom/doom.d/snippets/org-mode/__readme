@@ -1,13 +1,15 @@
 # -*- mode: snippet -*-
-# name: Readme (read-the-orgs)             
+# name: Readme (read-the-orgs)                                                
 # --
-#+TITLE:   ${1:`(if (file-directory-p ".git")
+#+TITLE: ${1:`(if (file-directory-p ".git")
                     (shell-command-to-string "basename (realpath .)")
                   "")`}
-#+AUTHOR: Lucas Sas
-#+DATE:    `(format (format-time-string "%B %%s, %Y") (string-to-number (format-time-string "%d")))`
+#+AUTHOR: `(print user-full-name)`
+#+EMAIL: `(print user-mail-address)`
+#+DATE: `(format (format-time-string "%B %%s, %Y") (string-to-number (format-time-string "%d")))`
 #+STARTUP: inlineimages nofold
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+EXPORT_FILE_NAME: docs/index.html
 #+SINCE:   ${2:{replace with next tagged release version}}
 
 * Description
@@ -15,4 +17,3 @@
 + @SirBubbls
 * Installation
 * Usage
-* Installations
