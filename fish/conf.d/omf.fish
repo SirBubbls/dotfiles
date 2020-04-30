@@ -19,8 +19,8 @@ set -U theme_project_dir_length 1
 # Setting VI Mode
 set theme_display_vi yes
 
-# Homebrew /bin/
-set PATH /home/sirbubbls/.linuxbrew/Homebrew/bin/ $PATH
+# Rust Environment Variable
+set fish_user_paths ~/.cargo/bin/ $PATH
 
 alias p='python3'
 alias reload='source ~/.config/fish/conf.d/omf.fish;tmux source-file ~/.tmux.conf'
@@ -47,8 +47,11 @@ alias pin='ping www.google.de'
 alias tmuxkill='tmux kill-session -a'
 alias ls='ls -G1'
 alias ll='ls -G'
-alias simpleserver='python2 -m SimpleHTTPServer'
+alias simpleserver='python -m http.server 8000'
 alias dropignore='xattr -w com.dropbox.ignored 1'
+alias dc=docker-compose
+# GTM Shortcuts
+alias gtmbar='gtm report -format timeline-hours'
 
 # LSCOLORS
  set -Ux LSCOLORS Gxfxcxdxbxegedabagacad
