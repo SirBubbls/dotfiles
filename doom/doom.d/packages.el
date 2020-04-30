@@ -52,3 +52,4 @@
 ;(package! builtin-package :recipe (:branch "develop"))
 
 (package! org-fragtog)
+(package! git-time-metric)

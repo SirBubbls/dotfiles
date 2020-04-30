@@ -110,3 +110,4 @@
 
 (load! "configurations/spellcheck")
 (load! "configurations/clang")
+(add-hook 'after-save-hook 'git-time-metric-record)
