@@ -111,4 +111,5 @@
 
 (load! "configurations/spellcheck")
 (load! "configurations/clang")
+(load! "configurations/ignore-files")
 (add-hook 'after-save-hook 'git-time-metric-record)
