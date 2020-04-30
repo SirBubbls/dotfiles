@@ -18,6 +18,7 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
+;; M-x +pretty-code/install-patched-font
 (setq doom-font (font-spec :family "Iosevka" :size 22))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
