@@ -18,16 +18,16 @@
   (push #'treemacs-custom-filter treemacs-ignored-file-predicates)
   (setq-default treemacs-show-hidden-files t)
   (setq-default treemacs-project-follow-cleanup t)
-  (setq-default treemacs-git-mode 'deferred)
-)
+  (setq-default treemacs-git-mode 'deferred))
 
-(setq counsel-find-file-ignore-regexp (regexp-opt '(".DS_Store"
-                                                    ".git"
-                                                    ".gtm"
-                                                    "__pycache__"
-                                                    ".lock"
-                                                    ".class"
-                                                    ".pyc"
-                                                    ".jar"
-                                                    ".ob-jupyter"
-                                                    ".ipynb_checkpoints")))
+(with-eval-after-load 'counsel
+  (setq counsel-find-file-ignore-regexp (regexp-opt '(".DS_Store"
+                                                      ".git"
+                                                      ".gtm"
+                                                      "__pycache__"
+                                                      ".lock"
+                                                      ".class"
+                                                      ".pyc"
+                                                      ".jar"
+                                                      ".ob-jupyter"
+                                                      ".ipynb_checkpoints"))))
