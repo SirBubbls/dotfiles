@@ -2,6 +2,7 @@
 
 
 ;; Call this function to link OSX C header to clang completion
+;; Output gets appended to .clang_complete
 (defun irony-link-macos ()
   (shell-command-to-string "echo | clang -x c++ -v -E - 2>&1 | sed -n '/^#include </,/^End/s|^[^/]*\([^ ]*/include[^ ]*\).*$|-I\1|p' >> ~/.clang_complete"))
 
