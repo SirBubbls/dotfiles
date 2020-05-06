@@ -114,4 +114,4 @@
 (load! "configurations/ignore-files")
 (load! "configurations/yasnippet-integration")
 (load! "configurations/look")
-(add-hook 'after-save-hook 'git-time-metric-record)
+(load! "configurations/time-tracking")
