@@ -1,8 +1,5 @@
 ;;; ~/Dropbox/Configurations/dotfiles/doom/doom.d/configurations/ignore-files.el -*- lexical-binding: t; -*-
 
-(with-eval-after-load 'counsel
-  (setq counsel-find-file-ignore-regexp "\\.out\\|\\.o\\|\\.DS_Store\\|\\.gtm\\'"))
-
 (with-eval-after-load 'treemacs
   (defun treemacs-custom-filter (file _)
     (or (s-ends-with? ".o" file)
@@ -27,6 +24,7 @@
                                                       "__pycache__"
                                                       ".lock"
                                                       ".class"
+                                                      ".o"
                                                       ".pyc"
                                                       ".jar"
                                                       ".ob-jupyter"
