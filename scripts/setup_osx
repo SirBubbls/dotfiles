@@ -60,3 +60,7 @@ brew cask install mactex-no-gui;
 ln -s /Library/TeX/texbin/latex /usr/local/bin/latex;
 ln -s /Library/TeX/texbin/dvipng /usr/local/bin/dvipng;
 ln -s /Library/TeX/texbin/pdflatex /usr/local/bin/pdflatex;
+
+# Key Repeat Settings
+defaults write -g InitialKeyRepeat -int 9;
+defaults write -g KeyRepeat -int 1;
