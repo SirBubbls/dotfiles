@@ -115,3 +115,4 @@
 (load! "configurations/yasnippet-integration")
 (load! "configurations/look")
 (load! "configurations/time-tracking")
+(load! "configurations/search")
