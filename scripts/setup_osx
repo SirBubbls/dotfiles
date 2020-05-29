@@ -64,3 +64,6 @@ ln -s /Library/TeX/texbin/pdflatex /usr/local/bin/pdflatex;
 # Key Repeat Settings
 defaults write -g InitialKeyRepeat -int 9;
 defaults write -g KeyRepeat -int 1;
+
+# Git Config
+git config --global user.email "lucassas@live.de"
