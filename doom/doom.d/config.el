@@ -25,6 +25,15 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. These are the defaults.
 (setq doom-theme 'doom-molokai)
+;; Display Battery
+(display-battery-mode 1)  ;; TODO Only display battery when on battery power
+
+(setq-default
+ delete-by-moving-to-trash t                      ; Delete files to trash
+ tab-width 4                                      ; Set width for tabs
+ uniquify-buffer-name-style 'forward              ; Uniquify buffer names
+ window-combination-resize t                      ; take new window space from all other windows (not just current)
+ x-stretch-cursor t)
 
 ;; If you intend to use org, it is recommended you change this!
 (setq org-directory "~/Dropbox/Org/")
