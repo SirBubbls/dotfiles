@@ -32,13 +32,14 @@
 (define-key! evil-normal-state-map (kbd "M-n") 'drag-stuff-down)
 
 ;; Special Symbols
-(define-key key-translation-map (kbd "C-u") "ü")
-(define-key key-translation-map (kbd "C-S-U") "Ü")
-(define-key key-translation-map (kbd "C-o") "ö")
-(define-key key-translation-map (kbd "C-S-O") "Ö")
-(define-key key-translation-map (kbd "C-a") "ä")
-(define-key key-translation-map (kbd "C-S-A") "Ä")
-(define-key key-translation-map (kbd "C-s") "ß")
+(define-key key-translation-map (kbd "M-u") "ü")
+(define-key key-translation-map (kbd "M-S-U") "Ü")
+(define-key key-translation-map (kbd "M-o") "ö")
+(define-key key-translation-map (kbd "M-S-O") "Ö")
+(define-key key-translation-map (kbd "M-a") "ä")
+(define-key key-translation-map (kbd "M-S-A") "Ä")
+(define-key key-translation-map (kbd "M-s") "ß")
+
 
 ;; Treemacs
 (after! treemacs
