@@ -4,6 +4,8 @@
 
 ;; Latex Fragments
 (setq org-startup-latex-with-latex-preview 't)
+
+;; Preview on Startup
 (setq org-startup-with-latex-preview 't)
 
 ;; Auto render latex fragments
