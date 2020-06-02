@@ -1,16 +1,7 @@
-
-
-;; ;;
-;; ;; LangTool
-;; ;;
-
-;; ;; ;; Default Language
-;; ;; ;; Unicode Support
-;; (setq langtool-java-user-arguments '("-Dfile.encoding=UTF-8"))
-
 (if (executable-find "languagetool")
   (setq langtool-mother-tongue "de")
   (setq langtool-default-language "de-DE")
+  ;; Unicode Support
   (setq langtool-java-user-arguments '("-Dfile.encoding=UTF-8"))
 )
 
@@ -25,5 +16,5 @@
     (setq ispell-personal-dictionary "~/.doom.d/personal_dict")
     (ispell-set-spellchecker-params)
     (ispell-hunspell-add-multi-dic "en_US,de_DE")
-    )
   )
+)

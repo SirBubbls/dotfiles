@@ -3,7 +3,6 @@
 ;; (setq org-preview-latex-default-process 'dvisvgm)
 
 ;; Latex Fragments
-(setq org-startup-latex-with-latex-preview 't)
 
 ;; Preview on Startup
 (setq org-startup-with-latex-preview 't)
