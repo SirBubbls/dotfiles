@@ -14,6 +14,13 @@
       :n "i" 'evil-forward-char
       :n "u" 'evil-insert
       :n (kbd "s-b") 'evil-switch-to-windows-last-buffer
+      (:after org
+        :map org-mode-map
+        "M-N" #'org-move-subtree-down
+        "M-E" #'org-move-subtree-up
+        "M-H" #'org-demote-subtree
+        "M-I" #'org-promote-subtree
+        )
       (:after company
         :map company-active-map
         "C-n"         #'company-select-next
