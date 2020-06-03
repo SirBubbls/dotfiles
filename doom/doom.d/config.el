@@ -130,3 +130,9 @@
 (load! "configurations/look")
 (load! "configurations/time-tracking")
 (load! "configurations/search")
+(load! "configurations/refrences")
+(load! "configurations/org-ref")
+(load! "configurations/python-config")
+
+(setq yas-snippet-dirs (append yas-snippet-dirs
+                               '("~/.doom.d/snippets")))
