@@ -14,6 +14,13 @@
       :n "i" 'evil-forward-char
       :n "u" 'evil-insert
       :n (kbd "s-b") 'evil-switch-to-windows-last-buffer
+      (:after doc-view
+       :map doc-view-mode-map (
+                               :n "N" #'doc-view-next-page
+                               :n "E" #'doc-view-previous-page
+                               :n "n" #'doc-view-scroll-up-or-next-page
+                               :n "e" #'doc-view-scroll-down-or-previous-page
+                               ))
       (:after org
         :map evil-org-mode-map (
           :n "M-N" #'org-move-subtree-down
