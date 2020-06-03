@@ -24,7 +24,9 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. These are the defaults.
-(setq doom-theme 'doom-molokai)
+(setq doom-theme 'doom-vibrant)
+(setq doom-modeline-height 7)
+
 ;; Display Battery
 (display-battery-mode 1)  ;; TODO Only display battery when on battery power
 
