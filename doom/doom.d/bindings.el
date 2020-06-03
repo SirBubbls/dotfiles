@@ -14,6 +14,14 @@
       :n "i" 'evil-forward-char
       :n "u" 'evil-insert
       :n (kbd "s-b") 'evil-switch-to-windows-last-buffer
+      (:after iedit
+       :n "k" #'iedit-next-occurrence
+       :n "K" #'iedit-prev-occurrence
+       :n "f" #'iedit-restrict-function
+       :n "l" #'iedit-restrict-current-line
+       :n "'" #'iedit-show/hide-unmatched-lines
+       :n "t" #'iedit-toggle-selection
+       )
       (:after doc-view
        :map doc-view-mode-map (
                                :n "N" #'doc-view-next-page
@@ -58,12 +66,3 @@
 (global-set-key (kbd "M-n") 'shrink-window)
 (global-set-key (kbd "M-e") 'enlarge-window)
 
-;; Iedit
-(after! iedit
-  (define-key evil-normal-state-map (kbd "<tab>") 'iedit-toggle-selection)
-  (define-key evil-normal-state-map (kbd "k") 'iedit-next-occurrence)
-  (define-key evil-normal-state-map (kbd "K") 'iedit-prev-occurrence)
-  (define-key evil-normal-state-map (kbd "f") 'iedit-restrict-function)
-  (define-key evil-normal-state-map (kbd "l") 'iedit-restrict-current-line)
-  (define-key evil-normal-state-map (kbd "'") 'iedit-show/hide-unmatched-lines)
-  (define-key! iedit-mode-occurrence-keymap "<tab>" 'iedit-toggle-selection))
