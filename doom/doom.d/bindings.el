@@ -15,12 +15,16 @@
       :n "u" 'evil-insert
       :n (kbd "s-b") 'evil-switch-to-windows-last-buffer
       (:after org
-        :map org-mode-map
-        "M-N" #'org-move-subtree-down
-        "M-E" #'org-move-subtree-up
-        "M-H" #'org-demote-subtree
-        "M-I" #'org-promote-subtree
-        )
+        :map evil-org-mode-map (
+          :n "M-N" #'org-move-subtree-down
+          :n "M-E" #'org-move-subtree-up
+          :n "M-H" #'org-demote-subtree
+          :n "M-I" #'org-promote-subtree
+          :nv "h" #'evil-backward-char
+          :nv "i" #'evil-forward-char
+          :nv "e" #'evil-previous-line
+          :nv "n" #'evil-next-line
+        ))
       (:after company
         :map company-active-map
         "C-n"         #'company-select-next
