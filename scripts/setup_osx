@@ -67,3 +67,8 @@ defaults write -g KeyRepeat -int 1;
 
 # Git Config
 git config --global user.email "lucassas@live.de"
+
+# Setup GPG
+brew install gnupg2 pinetry-mac;
+git config --global commit.gpgsign true;
+gpgconf --kill gpg-agent;
