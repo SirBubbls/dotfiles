@@ -92,6 +92,9 @@
   (set-face-foreground 'line-number "#404040")
 ))
 
+(after! smartparens
+  (add-to-list 'sp-ignore-modes-list 'nxml-mode)
+)
 
 ;; Disable Prog Mode
 (add-hook 'prog-mode-hook (lambda ()
