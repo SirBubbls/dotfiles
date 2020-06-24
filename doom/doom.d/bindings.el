@@ -42,6 +42,13 @@
           :nv "e" #'evil-previous-line
           :nv "n" #'evil-next-line
         ))
+      (:after smerge-mode
+       :map smerge-mode-map(
+          :n (kbd "M-h") 'smerge-keep-other
+          :n (kbd "M-i") 'smerge-keep-current
+          :n (kbd "M-n") 'smerge-next
+          :n (kbd "M-e") 'smerge-prev
+      ))
       (:after company
         :map company-active-map
         "C-n"         #'company-select-next
