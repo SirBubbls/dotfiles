@@ -66,7 +66,9 @@ defaults write -g InitialKeyRepeat -int 15;
 defaults write -g KeyRepeat -int 1;
 
 # Git Config
-git config --global user.email "lucassas@live.de"
+git config --global user.email "lucassas@live.de";
+git config --global user.name "Lucas Sas";
+git config --global core.editor "emacs";
 
 # Setup GPG
 brew install gnupg2 pinentry-mac;
