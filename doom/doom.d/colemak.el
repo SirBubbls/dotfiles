@@ -33,11 +33,11 @@
 
 ;; Special Symbols
 (define-key key-translation-map (kbd "M-u") "ü")
-(define-key key-translation-map (kbd "M-S-U") "Ü")
+(define-key key-translation-map (kbd "M-U") "Ü")
 (define-key key-translation-map (kbd "M-o") "ö")
-(define-key key-translation-map (kbd "M-S-O") "Ö")
+(define-key key-translation-map (kbd "M-O") "Ö")
 (define-key key-translation-map (kbd "M-a") "ä")
-(define-key key-translation-map (kbd "M-S-A") "Ä")
+(define-key key-translation-map (kbd "M-A") "Ä")
 (define-key key-translation-map (kbd "M-s") "ß")
 
 
