@@ -31,6 +31,12 @@
                                :n "n" #'doc-view-scroll-up-or-next-page
                                :n "e" #'doc-view-scroll-down-or-previous-page
                                ))
+      (:after calc
+       :map calc-mode-map (
+                           :n "n" #'next-line
+                           :n "e" #'previous-line
+                           )
+       )
       (:after org
         :map evil-org-mode-map (
           :n "M-N" #'org-move-subtree-down
