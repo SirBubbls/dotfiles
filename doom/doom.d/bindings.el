@@ -17,6 +17,7 @@
       :n "e" 'evil-previous-line
       :n "i" 'evil-forward-char
       :n "u" 'evil-insert
+      :n (kbd "s-m") #'evil-make
       :n (kbd "s-b") 'evil-switch-to-windows-last-buffer
       (:after iedit
        :n "k" #'iedit-next-occurrence
