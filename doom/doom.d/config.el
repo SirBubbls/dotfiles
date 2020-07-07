@@ -41,9 +41,6 @@
 (setq org-directory "~/Dropbox/Org/")
 (setq default-directory "~")
 
-(after! org
-  (load! "configurations/latex-fragment")
-  )
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
 (setq display-line-numbers-type 'relative)
@@ -127,16 +124,14 @@
 (if (file-exists-p "personal.el")
     (load! "personal"))
 
-(load! "configurations/spellcheck")
-(load! "configurations/clang")
-(load! "configurations/ignore-files")
-(load! "configurations/yasnippet-integration")
-(load! "configurations/look")
-(load! "configurations/time-tracking")
-(load! "configurations/search")
-(load! "configurations/refrences")
-(load! "configurations/org-ref")
-(load! "configurations/python-config")
+;; Load Dir Function
+(defun load-directory (dir)
+      (let ((load-it (lambda (f)
+		       (load! (concat (file-name-as-directory dir) f)))
+		     ))
+	(mapc load-it (directory-files dir nil "\\.el$"))))
+
+(load-directory "~/.doom.d/configurations")
 
 (setq yas-snippet-dirs (append yas-snippet-dirs
                                '("~/.doom.d/snippets")))
