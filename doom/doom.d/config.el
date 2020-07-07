@@ -39,6 +39,7 @@
 
 ;; If you intend to use org, it is recommended you change this!
 (setq org-directory "~/Dropbox/Org/")
+(setq default-directory "~")
 
 (after! org
   (load! "configurations/latex-fragment")
