@@ -6,6 +6,8 @@
       :n "T" 'evil-insert-line
       :n "l" 'evil-open-below
       :n "L" 'evil-open-above
+      :n (kbd "s-t") #'eshell
+      :nv (kbd "s-t") #'eshell
       :n (kbd "s-c") 'recenter
       :nv (kbd "s-c") 'recenter
       :n "f" 'evil-ex-search-next
