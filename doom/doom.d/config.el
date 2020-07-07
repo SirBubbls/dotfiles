@@ -37,9 +37,7 @@
  window-combination-resize t                      ; take new window space from all other windows (not just current)
  x-stretch-cursor t)
 
-;; If you intend to use org, it is recommended you change this!
 (setq org-directory "~/Dropbox/Org/")
-(setq default-directory "~")
 
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
@@ -116,9 +114,9 @@
 (toggle-frame-maximized)
 
 ;; System Specific Settings
-(if (eq 'system-type 'darwin) (load! "darwin"))
-(if (eq 'system-type 'ms-dos) (load! "msdos"))
-(if (eq 'system-type 'gnu/linux) (load! "linux"))
+(if (eq system-type 'darwin) (load! "darwin"))
+(if (eq system-type 'ms-dos) (load! "msdos"))
+(if (eq system-type 'gnu/linux) (load! "linux"))
 
 ;; Loading Personal Information like credentials
 (if (file-exists-p "personal.el")
