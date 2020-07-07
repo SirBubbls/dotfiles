@@ -10,4 +10,9 @@
       (append (if (consp backend) backend (list backend))
               '(:with company-yasnippet))))
   (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
-  (print "Loaded Snippets"))
+  )
+
+(set-file-template! "Readme\\.org" :trigger "__readme")
+(set-file-template! "README\\.org" :trigger "__readme")
+(set-file-template! ".*Presentation.*\\.org" :trigger "__presentation")
+(set-file-template! ".*presentation.*\\.org" :trigger "__presentation")

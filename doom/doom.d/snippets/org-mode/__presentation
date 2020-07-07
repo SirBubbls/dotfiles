@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: Readme (read-the-orgs)
-# key: __readme
+# name: Org Reveal Presentation
+# key: __presentation
 # --
 #+TITLE: ${1:`(if (file-directory-p ".git")
                     (shell-command-to-string "basename (realpath .)")
@@ -12,9 +12,7 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 #+EXPORT_FILE_NAME: docs/index.html
 #+SINCE:   ${2:{replace with next tagged release version}}
-
-* Description
-** Maintainers
-+ @SirBubbls
-* Installation
-* Usage
+#+EXPORT_FILE_NAME: docs/index.html
+#+bind: org-export-publishing-directory "./exports"
+#+OPTIONS: toc:nil num:nil timestamp:nil
+#+REVEAL_THEME: solarized
