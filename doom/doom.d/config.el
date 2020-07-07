@@ -102,8 +102,8 @@
   (display-line-numbers-mode 0)
 ))
 
-(add-hook! ein:notebook-mode
-  (load! "~/.doom.d/configurations/ein-config"))
+;; (add-hook! ein:notebook-mode
+;;   (load! "~/.doom.d/configurations/ein-config"))
 
 (setq doom-modeline-github 't)
 
