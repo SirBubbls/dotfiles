@@ -12,6 +12,11 @@
   (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
   )
 
+;; custom snippet location
+(setq yas-snippet-dirs (append yas-snippet-dirs
+                               '("~/.doom.d/snippets")))
+
+;; custom file-templates
 (set-file-template! "Readme\\.org" :trigger "__readme")
 (set-file-template! "README\\.org" :trigger "__readme")
 (set-file-template! ".*Presentation.*\\.org" :trigger "__presentation")

@@ -129,7 +129,6 @@
 		     ))
 	(mapc load-it (directory-files dir nil "\\.el$"))))
 
+;; Load all configurations files from configurations folder
 (load-directory "~/.doom.d/configurations")
 
-(setq yas-snippet-dirs (append yas-snippet-dirs
-                               '("~/.doom.d/snippets")))
