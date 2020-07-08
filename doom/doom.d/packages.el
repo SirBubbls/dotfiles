@@ -53,3 +53,4 @@
 
 (package! org-fragtog)  ;; Automatic Latex Preview
 (package! git-time-metric)
+(package! sublimity)
