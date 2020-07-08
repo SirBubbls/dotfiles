@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: get
+# key: get
+# --
+GET http://${1:localhost}:${2:8080}/$3

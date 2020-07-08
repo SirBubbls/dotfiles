@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: put
+# key: put                        
+# --
+POST http://${1:localhost}:${2:8080}/$3
+Content-Type: ${4:application/json}
+{
+    $5
+}

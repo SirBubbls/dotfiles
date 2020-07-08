@@ -132,3 +132,4 @@
 ;; Load all configurations files from configurations folder
 (load-directory "~/.doom.d/configurations")
 
+(yas-global-mode)

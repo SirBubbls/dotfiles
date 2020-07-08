@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: delete
+# key: delete
+# --
+DELETE http://${1:localhost}:${2:8080}/$3
