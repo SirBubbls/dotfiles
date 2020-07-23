@@ -18,3 +18,12 @@
     (ispell-hunspell-add-multi-dic "en_US,de_DE")
   )
 )
+
+;; Add word under cursor to personal dictionary and refresh errors in buffer
+(defun add-word-to-personal-dict ()
+  (interactive)
+  (let ((current-location (point))
+         (word (flyspell-get-word)))
+    (when (consp word)
+      (append-to-file (concat (car word) "\n") nil ispell-personal-dictionary)
+      (flyspell-lazy-check-buffer))))
