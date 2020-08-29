@@ -131,5 +131,6 @@
 
 ;; Load all configurations files from configurations folder
 (load-directory "~/.doom.d/configurations")
+(load-directory "~/.doom.d/scripts")
 
 (yas-global-mode)
