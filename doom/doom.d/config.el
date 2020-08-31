@@ -68,14 +68,6 @@
 (after! typescript-mode
   (setq-default typescript-indent-level 2))
 
-(after! org-mode
-  (display-line-numbers-mode 0)
-  (setq org-list-description-max-indent 5)
-  (setq org-adapt-indentation nil))
-
-;; Org mode auto remove intermediate files after export
-(setq org-latex-logfiles-extensions (quote ("lof" "lot" "tex" "tex~" "aux" "idx" "log" "out" "toc" "nav" "snm" "vrb" "dvi" "fdb_latexmk" "blg" "brf" "fls" "entoc" "ps" "spl" "bbl")))
-
 (add-hook 'org-mode-hook (lambda()
   (setq org-list-description-max-indent 5)
   (display-line-numbers-mode 0)
