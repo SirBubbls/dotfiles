@@ -19,12 +19,12 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 ;; M-x +pretty-code/install-patched-font
-(setq doom-font (font-spec :family "Iosevka" :size 22))
+(setq doom-font (font-spec :family "Iosevka" :size (floor (/ (display-pixel-height) 72)) ))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. These are the defaults.
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-one-light)
 (setq doom-modeline-height 7)
 
 ;; Display Battery
@@ -74,6 +74,7 @@
   (setq org-adapt-indentation nil)
 ))
 
+(setq python-shell-interpreter "python")
 ;; Line Numbers
 (add-hook 'display-line-numbers-mode-hook (lambda ()
   (set-face-foreground 'line-number-current-line "#f74b00")
@@ -117,9 +118,9 @@
 ;; Load Dir Function
 (defun load-directory (dir)
       (let ((load-it (lambda (f)
-		       (load! (concat (file-name-as-directory dir) f)))
-		     ))
-	(mapc load-it (directory-files dir nil "\\.el$"))))
+           (load! (concat (file-name-as-directory dir) f)))
+         ))
+  (mapc load-it (directory-files dir nil "\\.el$"))))
 
 ;; Load all configurations files from configurations folder
 (load-directory "~/.doom.d/configurations")

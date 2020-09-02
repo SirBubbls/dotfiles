@@ -38,11 +38,13 @@
 (define-key key-translation-map (kbd "M-O") "Ö")
 (define-key key-translation-map (kbd "M-a") "ä")
 (define-key key-translation-map (kbd "M-A") "Ä")
+(define-key key-translation-map (kbd "M-S") "ß")
 (define-key key-translation-map (kbd "M-s") "ß")
 
 
 ;; Treemacs
 (after! treemacs
+  (define-key evil-treemacs-state-map "S" 'treemacs-switch-workspace)
   (define-key evil-treemacs-state-map "n" 'treemacs-next-line)
   (define-key evil-treemacs-state-map "e" 'treemacs-previous-line)
   (define-key treemacs-mode-map "n" 'treemacs-next-line)
