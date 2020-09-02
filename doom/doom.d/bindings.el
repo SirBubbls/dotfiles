@@ -27,6 +27,12 @@
        :n "'" #'iedit-show/hide-unmatched-lines
        :n "t" #'iedit-toggle-selection
        )
+      (:leader
+       (:prefix "b"
+        :desc "List Buffers" "b" #'ivy-switch-buffer)
+       (:prefix "i"
+        :desc "Insert Snippet" "s" #'ivy-yasnippet)
+       )
       (:after doc-view
        :map doc-view-mode-map (
                                :n "N" #'doc-view-next-page
@@ -68,8 +74,7 @@
       :map evil-visual-state-map
       :nv "n" 'evil-next-line
       :nv "e" 'evil-previous-line
-      :leader (:prefix "b"
-                :desc "list-buffers" "b" #'ivy-switch-buffer))
+      )
 
 (define-key evil-visual-state-map "n" 'evil-next-line)
 (define-key evil-normal-state-map (kbd "M-/") 'comment-line)
