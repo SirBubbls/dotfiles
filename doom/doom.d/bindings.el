@@ -88,4 +88,3 @@
 
 (global-set-key (kbd "M-n") 'shrink-window)
 (global-set-key (kbd "M-e") 'enlarge-window)
-
