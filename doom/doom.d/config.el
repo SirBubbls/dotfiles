@@ -95,6 +95,11 @@
   (display-line-numbers-mode 0)
 ))
 
+
+(after! counsel
+  (setq counsel-search-engine 'google)
+  )
+
 ;; (add-hook! ein:notebook-mode
 ;;   (load! "~/.doom.d/configurations/ein-config"))
 
