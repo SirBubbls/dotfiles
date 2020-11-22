@@ -53,4 +53,6 @@
 
 (package! org-fragtog)  ;; Automatic Latex Preview
 (package! git-time-metric)
-(package! sublimity)
+(package! gist)
+(package! ob-mermaid)
+(package! ivy-yasnippet)

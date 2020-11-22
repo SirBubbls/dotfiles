@@ -6,6 +6,7 @@
         (s-ends-with? "__pycache__" file)
         (s-ends-with? ".gtm" file)
         (s-ends-with? ".ob-jupyter" file)
+        (s-ends-with? ".cov2emacs.log" file)
         (s-ends-with? ".class" file)
         (s-ends-with? ".ipynb_checkpoints" file)
         (s-ends-with? ".pytest_cache" file)

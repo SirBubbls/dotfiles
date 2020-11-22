@@ -27,6 +27,9 @@
 (setq doom-theme 'doom-one-light)
 (setq doom-modeline-height 7)
 
+;; Disable Lockfiles
+(setq create-lockfiles nil)
+
 ;; Display Battery
 (display-battery-mode 1)  ;; TODO Only display battery when on battery power
 

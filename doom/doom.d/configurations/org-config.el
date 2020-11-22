@@ -1,6 +1,4 @@
 (after! org
-  (setq sublimity-disabled-minor-modes '(cua--rectangle multiple-cursors-mode org-tree-slide-mode))
-
   ;; Disable line numbers
   (display-line-numbers-mode 0)
 
@@ -26,5 +24,10 @@
   (setq org-latex-prefer-user-labels t)
 
   ;; Org mode auto remove intermediate files after export
-  (setq org-latex-logfiles-extensions (quote ("lof" "lot" "tex" "tex~" "aux" "idx" "log" "out" "toc" "nav" "snm" "vrb" "dvi" "fdb_latexmk" "blg" "brf" "fls" "entoc" "ps" "spl" "bbl")))
+  (setq org-latex-logfiles-extensions (quote ("xml" "bak" "lof" "lot" "tex" "tex~" "aux" "idx" "log" "out" "toc" "nav" "snm" "vrb" "dvi" "fdb_latexmk" "blg" "brf" "fls" "entoc" "ps" "spl" "bbl")))
+  (org-indent-mode 1)
 )
+
+(after! ob-mermaid
+  (setq ob-mermaid-cli-path "/usr/local/bin/mmdc")
+  )
