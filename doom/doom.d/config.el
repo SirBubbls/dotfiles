@@ -43,6 +43,9 @@
 ;; `nil' to disable it:
 (setq display-line-numbers-type 'relative)
 
+;; Language
+(setenv "LANG" "en_US.UTF-8")
+(setenv "LC_ALL" "en_US.UTF-8")
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
