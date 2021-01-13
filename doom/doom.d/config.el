@@ -27,6 +27,9 @@
 (setq doom-theme 'doom-one-light)
 (setq doom-modeline-height 7)
 
+;; Disable Lockfiles
+(setq create-lockfiles nil)
+
 ;; Display Battery
 (display-battery-mode 1)  ;; TODO Only display battery when on battery power
 
@@ -43,6 +46,9 @@
 ;; `nil' to disable it:
 (setq display-line-numbers-type 'relative)
 
+;; Language
+(setenv "LANG" "en_US.UTF-8")
+(setenv "LC_ALL" "en_US.UTF-8")
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -94,6 +100,11 @@
 (add-hook 'markdown-mode-hook (lambda ()
   (display-line-numbers-mode 0)
 ))
+
+
+(after! counsel
+  (setq counsel-search-engine 'google)
+  )
 
 ;; (add-hook! ein:notebook-mode
 ;;   (load! "~/.doom.d/configurations/ein-config"))

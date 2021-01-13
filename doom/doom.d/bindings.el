@@ -6,6 +6,7 @@
       :n "T" 'evil-insert-line
       :n "l" 'evil-open-below
       :n "L" 'evil-open-above
+      :nv "T" 'project-eshell
       :n (kbd "s-t") #'eshell
       :nv (kbd "s-t") #'eshell
       :n (kbd "s-c") 'recenter
@@ -14,7 +15,9 @@
       :n "F" 'evil-ex-search-previous
       :n "h" 'evil-backward-char
       :n "n" 'evil-next-line
+      :n (kbd "s-s") 'counsel-search
       :n "e" 'evil-previous-line
+      :nv (kbd "s-i") #'indent-region
       :n "i" 'evil-forward-char
       :n "u" 'evil-insert
       :n (kbd "s-m") #'evil-make
@@ -32,6 +35,8 @@
         :desc "List Buffers" "b" #'ivy-switch-buffer)
        (:prefix "i"
         :desc "Insert Snippet" "s" #'ivy-yasnippet)
+       (:prefix "q"
+        :desc "Kill Frame" "q" #'delete-frame)
        )
       (:after doc-view
        :map doc-view-mode-map (
@@ -84,4 +89,3 @@
 
 (global-set-key (kbd "M-n") 'shrink-window)
 (global-set-key (kbd "M-e") 'enlarge-window)
-
