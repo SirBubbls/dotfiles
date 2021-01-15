@@ -137,4 +137,6 @@
 (load-directory "~/.doom.d/configurations")
 (load-directory "~/.doom.d/scripts")
 
+(prescient-persist-mode 1)
+
 (yas-global-mode)
