@@ -62,6 +62,12 @@
           :nv "e" #'evil-previous-line
           :nv "n" #'evil-next-line
         ))
+      (:after pdf-view
+       :map pdf-view-mode-map(
+                              :n "n" #'pdf-view-next-page
+                              :n "e" #'pdf-view-previous-page
+                              :n (kbd "s-s") #'pdf-isearch-occur
+                              ))
       (:after smerge-mode
        :map smerge-mode-map(
           :n (kbd "M-h") 'smerge-keep-other
