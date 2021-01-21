@@ -56,6 +56,7 @@
 (package! gist)
 (package! ob-mermaid)
 (package! ivy-yasnippet)
+(package! org-ref)
 
 ;; Prescient Mode
 ;; Ivy item ordering
