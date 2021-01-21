@@ -27,6 +27,8 @@
 (setq doom-theme 'doom-one)
 (setq doom-modeline-height 7)
 
+(tool-bar-mode -1)
+
 ;; Disable Lockfiles
 (setq create-lockfiles nil)
 
