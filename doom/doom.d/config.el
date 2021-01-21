@@ -24,7 +24,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. These are the defaults.
-(setq doom-theme 'doom-one-light)
+(setq doom-theme 'doom-one)
 (setq doom-modeline-height 7)
 
 ;; Disable Lockfiles
@@ -136,5 +136,7 @@
 ;; Load all configurations files from configurations folder
 (load-directory "~/.doom.d/configurations")
 (load-directory "~/.doom.d/scripts")
+
+(prescient-persist-mode 1)
 
 (yas-global-mode)
