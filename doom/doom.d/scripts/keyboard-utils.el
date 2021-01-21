@@ -63,7 +63,7 @@
   (message "Error: lsusb not found"))
 )
 
-(external-keyboard-connected)
+;;(external-keyboard-connected)
 
 
 (provide 'keyboard-utils)
