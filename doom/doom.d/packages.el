@@ -61,6 +61,7 @@
 (package! org-re-reveal)
 (package! ob-mermaid)
 (package! org-fragtog)  ;; Automatic Latex Preview
+(package! company-box)
 
 (package! ivy-yasnippet)
 
