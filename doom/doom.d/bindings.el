@@ -22,6 +22,10 @@
       :n "u" 'evil-insert
       :n (kbd "s-m") #'evil-make
       :n (kbd "s-b") 'evil-switch-to-windows-last-buffer
+      ;; manual completion
+      (:after company
+       :i (kbd "<backtab>") 'company-complete
+       )
       (:after iedit
        :n "k" #'iedit-next-occurrence
        :n "K" #'iedit-prev-occurrence
