@@ -96,8 +96,7 @@
        (eval +overlay)     ; run code, run (also, repls)
        ;;gist              ; interacting with github gists
        lookup           ; helps you navigate your code and documentation
-       (lsp
-        +peek)
+       lsp
        (magit +forge)            ; a git porcelain for Emacs
        ;; make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
@@ -156,6 +155,8 @@
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
        (python            ; beautiful is better than ugly
+        +pyenv
+        +pyright
         +lsp)
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs

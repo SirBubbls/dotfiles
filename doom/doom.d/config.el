@@ -52,7 +52,7 @@
 
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
-(setq display-line-numbers-type 'relative)
+(setq display-line-numbers-type 'absolute)
 
 ;; Language
 (setenv "LANG" "en_US.UTF-8")
