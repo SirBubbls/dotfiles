@@ -114,6 +114,8 @@
 
 (setq doom-modeline-github 't)
 
+(setq auth-sources '("~/.authinfo"))
+
 ;; Keybindings
 (load! "bindings")
 (load! "colemak")
