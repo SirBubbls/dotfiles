@@ -3,5 +3,3 @@
 (setq doom-themes-treemacs-theme "doom-colors")
 (doom-themes-visual-bell-config)
 (doom-themes-treemacs-config)
-
-(load-theme 'doom-molokai t)
