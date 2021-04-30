@@ -29,12 +29,6 @@
 
 (tool-bar-mode -1)
 
-(setq lsp-clients-clangd-args '("-j=3"
-                                "--background-index"
-                                "--clang-tidy"
-                                "--completion-style=detailed"
-                                "--header-insertion=never"))
-(after! lsp-clangd (set-lsp-priority! 'clangd 2))
 ;; Disable Lockfiles
 (setq create-lockfiles nil)
 
@@ -76,8 +70,10 @@
 
 
 ;; Quitting without Confirmation
-(setq confirm-kill-processes nil)
-(setq confirm-kill-emacs nil)
+(setq
+ confirm-kill-processes nil
+ confirm-kill-emacs nil
+)
 
 (after! typescript-mode
   (setq-default typescript-indent-level 2))
@@ -88,7 +84,10 @@
   (setq org-adapt-indentation nil)
 ))
 
-(setq python-shell-interpreter "python")
+(add-hook 'markdown-mode-hook (lambda ()
+  (display-line-numbers-mode 0)
+))
+
 ;; Line Numbers
 (add-hook 'display-line-numbers-mode-hook (lambda ()
   (set-face-foreground 'line-number-current-line "#f74b00")
@@ -103,10 +102,6 @@
 (add-hook 'prog-mode-hook (lambda ()
   (line-number-mode 0)
   (column-number-mode 0)
-))
-
-(add-hook 'markdown-mode-hook (lambda ()
-  (display-line-numbers-mode 0)
 ))
 
 
@@ -146,5 +141,4 @@
 (load-directory "~/.doom.d/scripts")
 
 (prescient-persist-mode 1)
-
 (yas-global-mode)
