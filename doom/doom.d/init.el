@@ -27,6 +27,7 @@
        (ivy
         +icons
         +prescient
+        +childframe
         )               ; a search engine for love and life
 
        :ui
