@@ -28,12 +28,9 @@
        :i (kbd "<backtab>") 'company-complete
        )
       (:after iedit
-       :n "k" #'iedit-next-occurrence
-       :n "K" #'iedit-prev-occurrence
-       :n "f" #'iedit-restrict-function
-       :n "l" #'iedit-restrict-current-line
-       :n "'" #'iedit-show/hide-unmatched-lines
-       :n "t" #'iedit-toggle-selection
+       :map iedit-mode-occurrence-keymap
+       :g "t" #'iedit-toggle-selection
+       :g "'" #'iedit-show/hide-context-lines
        )
       (:leader
        (:prefix "b"
