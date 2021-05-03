@@ -4,7 +4,7 @@
  :leader
  ;; Eshell
  :desc "Open Eshell" "T" #'eshell
- :desc "New REST Client Buffer" "b R" (lambda!()
+ :desc "New REST Client Buffer" "b R" (cmd!()
                                        (let ((buffer (generate-new-buffer "*REST*")))
                                         (set-window-buffer nil buffer)
                                         (with-current-buffer buffer

@@ -40,6 +40,9 @@
  tab-width 4                                      ; Set width for tabs
  uniquify-buffer-name-style 'forward              ; Uniquify buffer names
  window-combination-resize t                      ; take new window space from all other windows (not just current)
+ tramp-connection-timeout 10
+ kill-do-not-save-duplicates t                    ; don't save duplicate stuff in killring
+ tramp-default-method "scp"
  x-stretch-cursor t)
 
 (setq org-directory "~/Dropbox/Org/")
