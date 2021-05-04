@@ -15,7 +15,7 @@
       :n "F" 'evil-ex-search-previous
       :n "h" 'evil-backward-char
       :n "n" 'evil-next-line
-      :n "P" 'counsel-yank-pop
+      :ni (kbd "s-p") 'counsel-yank-pop
       :n (kbd "s-s") 'counsel-search
       :n "e" 'evil-previous-line
       :nv (kbd "s-i") #'indent-region
