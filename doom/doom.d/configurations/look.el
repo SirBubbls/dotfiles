@@ -11,6 +11,7 @@
           (counsel-M-x       . ivy-posframe-display-at-frame-center)
           (counsel-find-file . ivy-posframe-display-at-frame-center)
           (ivy-switch-buffer . ivy-posframe-display-at-frame-center)
+          (swiper-isearch . ivy-posframe-display-at-frame-bottom-window-center)
           (t                 . ivy-posframe-display-at-frame-center)))
   (setq ivy-posframe-hide-minibuffer t)
   )
