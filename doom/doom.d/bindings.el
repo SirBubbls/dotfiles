@@ -40,13 +40,6 @@
        (:prefix "q"
         :desc "Kill Frame" "q" #'delete-frame)
        )
-      (:after doc-view
-       :map doc-view-mode-map (
-                               :n "N" #'doc-view-next-page
-                               :n "E" #'doc-view-previous-page
-                               :n "n" #'doc-view-scroll-up-or-next-page
-                               :n "e" #'doc-view-scroll-down-or-previous-page
-                               ))
       (:after calc
        :map calc-mode-map (
                            :n "n" #'next-line
@@ -64,12 +57,6 @@
           :nv "e" #'evil-previous-line
           :nv "n" #'evil-next-line
         ))
-      (:after pdf-view
-       :map pdf-view-mode-map(
-                              :n "n" #'pdf-view-next-page
-                              :n "e" #'pdf-view-previous-page
-                              :n (kbd "s-s") #'pdf-isearch-occur
-                              ))
       (:after smerge-mode
        :map smerge-mode-map(
           :n (kbd "M-h") 'smerge-keep-other
@@ -98,3 +85,10 @@
 (global-set-key (kbd "M-n") 'shrink-window)
 (global-set-key (kbd "M-e") 'enlarge-window)
 (unbind-key (kbd "<tab>") evil-motion-state-map)
+
+(defun set-pdf-bindings()
+  (map! :map pdf-view-mode-map
+   :n "n" 'pdf-view-next-page
+   :n "e" 'pdf-view-previous-page
+   :n (kbd "s-s") 'pdf-isearch-occur))
+(add-hook! 'pdf-view-mode-hook 'set-pdf-bindings)
