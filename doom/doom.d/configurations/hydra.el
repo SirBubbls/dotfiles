@@ -101,3 +101,29 @@ pr_e_vious                  _l_ower                _R_esolve all
  
   :desc "Window Management" "w" #'hydra-window/body
   ))
+
+(defhydra hydra-noter ()
+  "
+^Note^                            ^Other^
+----------------------------------------------------------------------
+_i_nsert                          _K_ill Session
+insert _p_ercise                  create _S_keleton
+_n_ext note
+pr_e_vious note
+"
+("i" org-noter-insert-note :color blue)
+("p" org-noter-insert-precise-note :color blue)
+
+("n" org-noter-sync-next-note :color red)
+("e" org-noter-sync-prev-note :color red)
+
+("S" org-noter-create-skeleton :color blue)
+("K" org-noter-kill-session :color blue))
+
+(map!
+ :after org-noter
+ :map org-noter-doc-mode-map
+ :g (kbd "s-n") 'hydra-noter/body
+ :map org-noter-notes-mode-map
+ :g (kbd "s-n") 'hydra-noter/body
+ )
