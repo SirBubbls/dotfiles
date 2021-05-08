@@ -51,11 +51,7 @@
 ;; our package manager can't deal with; see raxod502/straight.el#279)
 ;(package! builtin-package :recipe (:branch "develop"))
 
-(package! git-time-metric)
-(package! gist)
-
 ;; Org
-(package! org-ref)
 (package! org-ref)
 (package! org-pdfview)
 (package! org-re-reveal)
