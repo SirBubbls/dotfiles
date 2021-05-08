@@ -35,6 +35,14 @@
 ;; Display Battery
 (display-battery-mode 1)  ;; TODO Only display battery when on battery power
 
+;; recentf ignore list
+(after! recentf
+  (add-to-list 'recentf-exclude "treemacs-persist")
+  (add-to-list 'recentf-exclude "autosave")
+  (add-to-list 'recentf-exclude "env")
+  (add-to-list 'recentf-exclude "cookies")
+  )
+
 (setq-default
  delete-by-moving-to-trash t                      ; Delete files to trash
  tab-width 4                                      ; Set width for tabs
