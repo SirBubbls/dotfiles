@@ -29,7 +29,7 @@
        )
       (:after iedit
        :map iedit-mode-occurrence-keymap
-       :g "t" #'iedit-toggle-selection
+       :nv "t" #'iedit-toggle-selection
        :g "'" #'iedit-show/hide-context-lines
        )
       (:leader
