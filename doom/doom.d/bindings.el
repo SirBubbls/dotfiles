@@ -23,6 +23,11 @@
       :n "u" 'evil-insert
       :n (kbd "s-m") #'evil-make
       :n (kbd "s-b") 'evil-switch-to-windows-last-buffer
+      (:after treemacs
+       :leader
+       :prefix "f"
+       :desc "Treemacs Current Project" "T" 'treemacs-display-current-project-exclusively
+       )
       ;; manual completion
       (:after company
        :i (kbd "<backtab>") 'company-complete
