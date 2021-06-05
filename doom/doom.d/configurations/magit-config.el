@@ -83,4 +83,7 @@
   ;; Gravatar
   (setq magit-revision-show-gravatars '("^Author:     " . "^Commit:     "))
   (setq gravatar-service 'libravatar)
+
+  ;; List of recent commits
+  (add-hook 'magit-status-sections-hook 'magit-insert-recent-commits)
 )
