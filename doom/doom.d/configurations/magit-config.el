@@ -34,6 +34,7 @@
 
   ;; Branches
   (pretty-magit "master"  ? (:height 1.1) t)
+  (pretty-magit "develop"  ? (:height 1.01) t)
 
   (defun add-magit-faces ()
     "Add face properties and compose symbols for buffer from pretty-magit."
