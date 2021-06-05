@@ -9,8 +9,7 @@
       :nv "T" 'project-eshell
       :n (kbd "s-t") #'eshell
       :nv (kbd "s-t") #'eshell
-      :n (kbd "s-c") 'recenter
-      :nv (kbd "s-c") 'recenter
+      :g (kbd "s-c") 'recenter
       :n "f" 'evil-ex-search-next
       :n "F" 'evil-ex-search-previous
       :n "h" 'evil-backward-char
