@@ -33,8 +33,9 @@
   (pretty-magit "docs"    ? (:foreground "#f5f5f5" :height 1.1))
 
   ;; Branches
-  (pretty-magit "master"  ? (:height 1.1) t)
-  (pretty-magit "develop"  ? (:height 1.01) t)
+  (pretty-magit "master"  ? (:foreground "#F1502F" :height 1.01) t)
+  (pretty-magit "origin"  ? (:foreground "#f5f5f5" :height 1.01) t)
+  (pretty-magit "develop"  ? (:foreground "#F1502F" :height 1.01) t)
 
   (defun add-magit-faces ()
     "Add face properties and compose symbols for buffer from pretty-magit."
@@ -66,7 +67,7 @@
     (when use-magit-commit-prompt-p
       (setq use-magit-commit-prompt-p nil)
       (insert (ivy-read "Commit Type " pretty-magit-prompt
-                        :require-match t :sort t :preselect "Add: "))
+                        :require-match t :sort t :preselect "feat: "))
       ;; Or if you are using Helm...
       ;; (insert (helm :sources (helm-build-sync-source "Commit Type "
       ;;                          :candidates pretty-magit-prompt)
