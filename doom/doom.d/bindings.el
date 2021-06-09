@@ -35,6 +35,10 @@
        :map iedit-mode-occurrence-keymap
        :nv "t" #'iedit-toggle-selection
        :g "'" #'iedit-show/hide-context-lines
+       :g "f" #'iedit-restrict-function
+       :g "l" #'iedit-restrict-current-line
+       :g "k" #'iedit-next-occurrence
+       :g "K" #'iedit-prev-occurrence
        )
       (:leader
        (:prefix "b"
