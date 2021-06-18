@@ -115,6 +115,9 @@
   (column-number-mode 0)
 ))
 
+(after! treemacs
+  (setq treemacs-position 'right)
+  )
 
 (after! counsel
   (setq counsel-search-engine 'google)

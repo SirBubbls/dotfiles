@@ -71,17 +71,42 @@ _s_tarred            _r_ From Region
 
 (defhydra hydra-smerge ()
   "
-^Move^                      ^Resolve^              ^Other^
-----------------------------------------------------------------------
-_n_ext                      _m_ine                 _A_utomatic combine
-pr_e_vious                  _l_ower                _R_esolve all
-                          _b_ase
-                          _c_urrent
-                          _a_utomatic
+^Move^                      ^Resolve^                      ^Resolve & Go Next^               ^Other^
+----------------------------------------------------------------------------------------------------------
+_n_ext                      _m_ine                         _M_ine                            _A_utomatic combine
+pr_e_vious                  keep _l_ower                   _L_ower                           _R_esolve all
+                          revert to _b_ase               revert to _B_ase
+                          keep _c_ursor                  keep _C_ursor
+                          _a_utomatic                    _A_utomatic
 "
 ("n" smerge-next)
 ("e" smerge-prev)
 
+("M" (lambda()
+       (interactive)
+       (smerge-keep-mine)
+       (smerge-next)
+       ))
+("L" (lambda()
+       (interactive)
+       (smerge-keep-lower)
+       (smerge-next)
+       ))
+("B" (lambda()
+       (interactive)
+       (smerge-keep-base)
+       (smerge-next)
+       ))
+("C" (lambda()
+       (interactive)
+       (smerge-keep-current)
+       (smerge-next)
+       ))
+("C" (lambda()
+       (interactive)
+       (smerge-resolve)
+       (smerge-next)
+       ))
 ("m" smerge-keep-mine)
 ("l" smerge-keep-lower)
 ("b" smerge-keep-base)
@@ -89,7 +114,7 @@ pr_e_vious                  _l_ower                _R_esolve all
 ("a" smerge-resolve)
 
 ("A" smerge-auto-combine)
-("R" smerge-resolve-all)
+("R" smerge-resolve-all :color blue)
   )
 
 (map!
